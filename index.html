@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="da">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TransparentTax - Se Hvor Din Skat Går Hen</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo">
+                <span class="logo-icon">🇩🇰</span>
+                <h1>Transparent<span class="highlight">Tax</span></h1>
+            </div>
+            <p class="tagline">Se præcis hvor dine skattekroner går hen — og hvad de skaber for Danmark</p>
+        </div>
+    </header>
+
+    <main class="container">
+        <!-- Income Input Section -->
+        <section id="income-section" class="card">
+            <h2>Indtast Din Indkomst</h2>
+            <p class="section-desc">Indtast din årlige bruttoindkomst for at se din skatteberegning og hvor pengene ender.</p>
+
+            <div class="input-group">
+                <label for="income-input">Årlig bruttoindkomst (kr.)</label>
+                <div class="input-wrapper">
+                    <input type="text" id="income-input" placeholder="f.eks. 450.000" inputmode="numeric">
+                    <span class="input-suffix">kr./år</span>
+                </div>
+                <div class="quick-amounts">
+                    <button class="quick-btn" data-amount="250000">250.000</button>
+                    <button class="quick-btn" data-amount="350000">350.000</button>
+                    <button class="quick-btn" data-amount="450000">450.000</button>
+                    <button class="quick-btn" data-amount="550000">550.000</button>
+                    <button class="quick-btn" data-amount="700000">700.000</button>
+                </div>
+                <div class="checkbox-group">
+                    <label><input type="checkbox" id="church-tax" checked> Kirkeskat (gennemsnit 0,88%)</label>
+                    <label><input type="checkbox" id="is-member-atp"> ATP-medlem</label>
+                </div>
+                <button id="calculate-btn" class="btn-primary">Beregn Min Skat</button>
+            </div>
+        </section>
+
+        <!-- Results Section (hidden until calculated) -->
+        <div id="results" class="hidden">
+
+            <!-- Tax Summary -->
+            <section id="tax-summary" class="card">
+                <h2>Din Skatteberegning</h2>
+                <div class="summary-grid">
+                    <div class="summary-item gross">
+                        <span class="label">Bruttoindkomst</span>
+                        <span class="value" id="gross-income">0 kr.</span>
+                    </div>
+                    <div class="summary-item deduction">
+                        <span class="label">AM-bidrag (8%)</span>
+                        <span class="value" id="am-bidrag">0 kr.</span>
+                    </div>
+                    <div class="summary-item deduction">
+                        <span class="label">A-indkomst efter AM</span>
+                        <span class="value" id="income-after-am">0 kr.</span>
+                    </div>
+                    <div class="summary-item deduction">
+                        <span class="label">Personfradrag</span>
+                        <span class="value" id="personfradrag">0 kr.</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Bundskat (12,09%)</span>
+                        <span class="value" id="bundskat">0 kr.</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Topskat (15%)</span>
+                        <span class="value" id="topskat">0 kr.</span>
+                    </div>
+                    <div class="summary-item">
+                        <span class="label">Kommuneskat (gns. 25,067%)</span>
+                        <span class="value" id="kommuneskat">0 kr.</span>
+                    </div>
+                    <div class="summary-item" id="kirkeskat-row">
+                        <span class="label">Kirkeskat (gns. 0,88%)</span>
+                        <span class="value" id="kirkeskat">0 kr.</span>
+                    </div>
+                    <div class="summary-item total-tax">
+                        <span class="label">Samlet skat</span>
+                        <span class="value" id="total-tax">0 kr.</span>
+                    </div>
+                    <div class="summary-item net">
+                        <span class="label">Udbetalt (netto)</span>
+                        <span class="value" id="net-income">0 kr.</span>
+                    </div>
+                    <div class="summary-item rate">
+                        <span class="label">Effektiv skatteprocent</span>
+                        <span class="value" id="effective-rate">0%</span>
+                    </div>
+                </div>
+
+                <!-- Tax bar visualization -->
+                <div class="tax-bar-container">
+                    <h3>Din indkomst fordelt</h3>
+                    <div class="tax-bar">
+                        <div class="bar-segment bar-net" id="bar-net"><span>Udbetalt</span></div>
+                        <div class="bar-segment bar-am" id="bar-am"><span>AM</span></div>
+                        <div class="bar-segment bar-bund" id="bar-bund"><span>Bund</span></div>
+                        <div class="bar-segment bar-top" id="bar-top"><span>Top</span></div>
+                        <div class="bar-segment bar-kommune" id="bar-kommune"><span>Komm.</span></div>
+                        <div class="bar-segment bar-kirke" id="bar-kirke"><span>Kirke</span></div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WHERE YOUR TAX GOES - The core transparency section -->
+            <section id="breakdown-section" class="card">
+                <h2>Hvor Går Dine Skattekroner Hen?</h2>
+                <p class="section-desc">Baseret på Finansloven og det danske statsbudget — her er præcis hvad din skat finansierer.</p>
+
+                <div class="breakdown-total">
+                    <span>Din samlede skat:</span>
+                    <strong id="breakdown-total-tax">0 kr.</strong>
+                </div>
+
+                <div id="breakdown-grid" class="breakdown-grid">
+                    <!-- Filled by JS -->
+                </div>
+            </section>
+
+            <!-- Impact Section - What your tax creates -->
+            <section id="impact-section" class="card">
+                <h2>Hvad Skaber Dine Skattekroner?</h2>
+                <p class="section-desc">Konkrete eksempler på hvad dit bidrag dækker i det danske samfund.</p>
+                <div id="impact-list" class="impact-list">
+                    <!-- Filled by JS -->
+                </div>
+            </section>
+
+            <!-- The Bigger Picture -->
+            <section id="perspective-section" class="card">
+                <h2>Det Store Billede</h2>
+                <p class="section-desc">Skat er ikke bare et tal der forsvinder — det er fundamentet for det samfund vi alle lever i.</p>
+                <div class="perspective-content">
+                    <div class="perspective-item">
+                        <h3>📊 Alle bidrager</h3>
+                        <p>Uanset indkomstniveau bidrager alle skatteydere til det fælles samfund. En person der tjener 250.000 kr. betaler skat der finansierer skoler, hospitaler og veje — præcis som en der tjener 700.000 kr.</p>
+                    </div>
+                    <div class="perspective-item">
+                        <h3>🔄 Det cirkulære kredsløb</h3>
+                        <p>Skatten kommer tilbage som services: gratis sundhedsvæsen, uddannelse, børnepasning, infrastruktur, sikkerhed og et socialt sikkerhedsnet. Disse services ville koste langt mere hvis de var privatfinansierede.</p>
+                    </div>
+                    <div class="perspective-item">
+                        <h3>💡 Værdien af gennemsigtighed</h3>
+                        <p>Når vi kan se hvor pengene går, kan vi føre informerede samtaler om prioriteringer. Gennemsigtighed er forudsætningen for tillid mellem borgere og stat.</p>
+                    </div>
+                    <div class="perspective-item">
+                        <h3>🤝 Socialt sammenhold</h3>
+                        <p>Det danske velfærdssamfund bygger på solidaritet. Alle — uanset social klasse — bidrager til og nyder godt af det fælles system. Det er ikke "dem og os" — det er os alle sammen.</p>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>TransparentTax — Åben data, åben debat. Beregningerne er baseret på danske skatteregler 2025 og Finansloven.</p>
+            <p class="disclaimer">Bemærk: Dette er en forenkling af det danske skattesystem og er ikke en officiel skatteberegning. Brug <a href="https://skat.dk" target="_blank" rel="noopener">skat.dk</a> for præcise beregninger.</p>
+        </div>
+    </footer>
+
+    <script src="js/taxData.js"></script>
+    <script src="js/taxCalculator.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
