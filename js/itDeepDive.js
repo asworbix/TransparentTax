@@ -194,6 +194,140 @@ const IT_CASE_STUDIES = [
             },
         ],
     },
+    {
+        id: "ejendomsvurdering",
+        name: "Ejendomsvurderingssystemet",
+        icon: "",
+        org: "Skatteministeriet / Vurderingsstyrelsen",
+        years: "2017–nu",
+        budgetOriginal: "~1,3 mia. kr.",
+        budgetFinal: "3,4+ mia. kr.",
+        outcome: "Massivt forsinket, fejlbehæftet, stadig ikke færdigt",
+        lostValue: "Boligejere har ventet 10+ år på korrekte vurderinger. Tusindvis af fejlagtige vurderinger udsendt.",
+        severity: "catastrophic",
+        vendors: "KMD, Netcompany, NNIT, IBM (skiftende leverandører)",
+        timeline: [
+            { year: "2013", event: "Rigsrevisionen kritiserer de eksisterende ejendomsvurderinger som upålidelige. Nyt system loves." },
+            { year: "2017", event: "Nyt vurderingssystem påbegyndes. Budget: ~1,3 mia. kr." },
+            { year: "2019", event: "Første forsinkelse. Go-live udskydes." },
+            { year: "2020", event: "Yderligere forsinkelser. Budgettet stiger markant." },
+            { year: "2021", event: "Nye ejendomsvurderinger skulle have været klar. Udskydes igen." },
+            { year: "2022", event: "Interne papirer afslører system af 'forbløffende lav kvalitet'. Budget sprængt." },
+            { year: "2023", event: "De første nye vurderinger sendes ud - med tusindvis af fejl. 7.500 nye fejl opdages ifølge interne dokumenter." },
+            { year: "2024", event: "Budget nået 3,4+ mia. kr. Rigsrevisionen advarer fortsat om forsinkelser og mangelfuld styring." },
+        ],
+        rootCauses: [
+            {
+                cause: "Evig forsinkelse, voksende budget",
+                detail: "Projektet er gået fra ~1,3 mia. til over 3,4 mia. kr. og er forsinket med årevis. Typisk mønster for offentlige megaprojekter."
+            },
+            {
+                cause: "Fejlbehæftede resultater",
+                detail: "De nye vurderinger der endelig blev sendt ud indeholdt tusindvis af fejl. Skatteminister indrømmede flere fejl end han 'var klar over'."
+            },
+            {
+                cause: "Skiftende leverandører",
+                detail: "Flere leverandører har været involveret gennem årene. Videnstab og omstarter ved hvert skift."
+            },
+        ],
+    },
+    {
+        id: "esas",
+        name: "ESAS: Nyt studieadministrativt system",
+        icon: "",
+        org: "Uddannelses- og Forskningsministeriet",
+        years: "2018–nu",
+        budgetOriginal: "ikke offentliggjort præcist",
+        budgetFinal: "100+ mio. kr. i ekstraomkostninger for universiteterne alene",
+        outcome: "Stærkt forsinket, massiv kritik fra Rigsrevisionen (2025)",
+        lostValue: "Universiteterne tvunget til at betale 100 mio. kr. ekstra pga. ministeriets forsinkelser.",
+        severity: "critical",
+        vendors: "Skiftende leverandører under ministeriets styring",
+        timeline: [
+            { year: "2018", event: "Projekt ESAS igangsættes. Skal erstatte det aldrende STADS-system på universiteterne." },
+            { year: "2020-2022", event: "Gentagne forsinkelser. Universiteterne betaler fortsat for det gamle system." },
+            { year: "2023", event: "Yderligere forsinkelser. Universiteterne belastes med ekstraomkostninger." },
+            { year: "2025", event: "Rigsrevisionen udgiver skarp kritik: 'yderst mangelfuld styring'. Regningen er 100+ mio. kr. dyrere end oplyst." },
+        ],
+        rootCauses: [
+            {
+                cause: "Yderst mangelfuld styring",
+                detail: "Rigsrevisionens egne ord. Ministeriet formåede ikke at styre projektet, og universiteterne betaler prisen."
+            },
+            {
+                cause: "Udgifter væltet over på brugerne",
+                detail: "Ministeriets forsinkelser kostede universiteterne 100 mio. kr. ekstra. Dem der bestilte fejlen betaler ikke selv."
+            },
+        ],
+    },
+    {
+        id: "aula",
+        name: "Aula: Skolernes kommunikationsplatform",
+        icon: "",
+        org: "KOMBIT / Kommunerne",
+        years: "2019–nu",
+        budgetOriginal: "Fast kontrakt med Netcompany",
+        budgetFinal: "Prisen 'løber løbsk' ifølge kommunerne",
+        outcome: "I drift, men dyr og problematisk",
+        lostValue: "Databrud: Netcompany-fejl gav adgang til skolebørns data. KOMBIT overvejer at skifte leverandør.",
+        severity: "critical",
+        vendors: "Netcompany - eneleverandør",
+        timeline: [
+            { year: "2019", event: "Aula lanceres som erstatning for SkoleIntra. Udviklet af Netcompany." },
+            { year: "2020", event: "Udrulles til dagtilbud. Brugere rapporterer problemer med brugervenlighed." },
+            { year: "2021", event: "Hård kritik af Netcompanys 'store prestigeprojekt'. Prisstigninger begynder." },
+            { year: "2022", event: "Netcompany-fejl giver uautoriseret adgang til skolebørns Aula-data. KOMBIT kritiseres af Datatilsynet." },
+            { year: "2023", event: "Kommunerne: Aula-pris 'løber løbsk'. KOMBIT overvejer at finde ny leverandør. Vendor lock-in gør det svært." },
+        ],
+        rootCauses: [
+            {
+                cause: "Vendor lock-in",
+                detail: "Netcompany har eneleverandørrollen. Når prisen stiger har kommunerne intet alternativ. KOMBIT overvejer genudbud, men det er dyrt og risikabelt."
+            },
+            {
+                cause: "Datasikkerhed svigter",
+                detail: "Fejl i Netcompanys kode gav adgang til skolebørns persondata. Alvorlig kritik fra Datatilsynet."
+            },
+            {
+                cause: "Monopolprissætning",
+                detail: "Når én leverandør sidder på alt, kan de sætte prisen. Netcompany er blevet 'for dyrt' ifølge KOMBIT."
+            },
+        ],
+    },
+    {
+        id: "mitid",
+        name: "MitID / Digital Post (mit.dk)",
+        icon: "",
+        org: "Digitaliseringsstyrelsen / Finansministeriet",
+        years: "2021–nu",
+        budgetOriginal: "Kontrakt med Netcompany",
+        budgetFinal: "Ukendt (ikke offentliggjort fuldt)",
+        outcome: "I drift, men GDPR-problemer og brugerklager",
+        lostValue: "15 mio. kr. rekordbøde (GDPR). Hundredtusindvis af borgere med problemer i overgangsperioden.",
+        severity: "critical",
+        vendors: "Netcompany - hovedleverandør af MitID og mit.dk (Digital Post)",
+        timeline: [
+            { year: "2021", event: "MitID lanceres som erstatning for NemID. Massiv overgangsperiode begynder." },
+            { year: "2022", event: "Digital Post flyttes fra e-Boks til mit.dk (Netcompany). Kaotisk overgang. Mange borgere mister adgang til post." },
+            { year: "2023", event: "Fortsat problemer med brugervenlighed. Sikkerhedsfejl opdages i MitID." },
+            { year: "2024", event: "Netcompany indstilles til rekordbot på 15 mio. kr. for GDPR-brud i Digital Post (mit.dk)." },
+            { year: "2025", event: "Stadig klager over MitID-fejl og Digital Post-problemer. Borgere udelukkes fra offentlige services." },
+        ],
+        rootCauses: [
+            {
+                cause: "Tvungen overgang uden alternativer",
+                detail: "Alle borgere blev tvunget fra NemID til MitID og fra e-Boks til mit.dk. Dem der ikke kunne følge med blev afskåret fra offentlige tjenester."
+            },
+            {
+                cause: "Netcompany-monopol på kritisk infrastruktur",
+                detail: "Netcompany leverer MitID, Digital Post (mit.dk), borger.dk og NemLog-in. Én leverandør kontrollerer hele den digitale offentlige infrastruktur."
+            },
+            {
+                cause: "GDPR-brud",
+                detail: "Rekordbot på 15 mio. kr. for sikkerhedsfejl i Digital Post. Borgernes data blev ikke beskyttet tilstrækkeligt."
+            },
+        ],
+    },
 ];
 
 /**
@@ -206,7 +340,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Megaprojekt-fælden",
         description: "Store monolitiske systemer der skal løse alt på én gang. Ingen trinvis levering, ingen feedback loops.",
-        frequency: "5 af 5 skandaler",
+        frequency: "Alle 8 sager",
         color: "#ef4444"
     },
     {
@@ -214,7 +348,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Kravspecifikation i blinde",
         description: "Organisationer kender ikke deres egne processer. Krav skrives af konsulenter der ikke forstår domænet.",
-        frequency: "5 af 5 skandaler",
+        frequency: "Alle 8 sager",
         color: "#f97316"
     },
     {
@@ -222,7 +356,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Udbudsregler tvinger vandfald",
         description: "EU-udbudsregler behandler IT som byggeri. Lineær proces med fastlåst scope, men software kræver iteration.",
-        frequency: "4 af 5 skandaler",
+        frequency: "6 af 8 sager",
         color: "#eab308"
     },
     {
@@ -238,7 +372,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Besparelser før systemet virker",
         description: "Medarbejdere fyres og gamle systemer nedlægges FØR det nye system er testet og i drift. Ingen plan B.",
-        frequency: "3 af 5 skandaler",
+        frequency: "5 af 8 sager",
         color: "#ec4899"
     },
     {
@@ -246,7 +380,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Leverandør-optimisme",
         description: "'Den der vinder er den der lyver.' Leverandører underbudgetterer for at vinde, vel vidende at scope vil vokse.",
-        frequency: "4 af 5 skandaler",
+        frequency: "6 af 8 sager",
         color: "#06b6d4"
     },
     {
@@ -254,7 +388,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Ingen tidlig brugertest",
         description: "Systemer bygges i årevis uden at rigtige brugere tester dem. Problemer opdages først ved go-live.",
-        frequency: "5 af 5 skandaler",
+        frequency: "Alle 8 sager",
         color: "#22c55e"
     },
     {
@@ -262,7 +396,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Manglende gennemsigtighed",
         description: "Dokumenter holdes fortrolige. Fejl skjules. Ingen offentlig ansvarlighed eller læring.",
-        frequency: "3 af 5 skandaler",
+        frequency: "5 af 8 sager",
         color: "#94a3b8"
     },
 ];
@@ -368,7 +502,7 @@ const MODERN_SOLUTIONS = [
  * Summary statistics for the "what could have been saved" calculation
  */
 const IT_WASTE_SUMMARY = {
-    totalWastedBn: 25,           // Conservative estimate: 25 mia. kr. wasted on failed IT over 15 years
+    totalWastedBn: 30,           // Conservative estimate: 30 mia. kr. wasted on failed/overrun IT over 20 years
     annualConsultantBn: 13.5,    // 12-15 mia. kr./year on consultants
     avgOverrunPct: 108,          // Danish average
     norwayOverrunPct: 8,         // Norway comparison
