@@ -18,7 +18,7 @@ const IT_CASE_STUDIES = [
     {
         id: "efi",
         name: "EFI: Et Fælles Inddrivelsessystem",
-        icon: "💀",
+        icon: "",
         org: "SKAT (nu Gældsstyrelsen)",
         years: "2005–2015",
         budgetOriginal: "ca. 500 mio. kr.",
@@ -61,7 +61,7 @@ const IT_CASE_STUDIES = [
     {
         id: "polsag",
         name: "POLSAG: Politiets Sagsbehandlingssystem",
-        icon: "🚔",
+        icon: "",
         org: "Rigspolitiet",
         years: "2007–2012",
         budgetOriginal: "153 mio. kr.",
@@ -98,7 +98,7 @@ const IT_CASE_STUDIES = [
     {
         id: "sundhedsplatformen",
         name: "Sundhedsplatformen (Epic)",
-        icon: "🏥",
+        icon: "",
         org: "Region Hovedstaden & Region Sjælland",
         years: "2012–nu",
         budgetOriginal: "2,8 mia. kr.",
@@ -139,7 +139,7 @@ const IT_CASE_STUDIES = [
     {
         id: "amanda",
         name: "Amanda: Arbejdsmarkedsstyrelsen",
-        icon: "📋",
+        icon: "",
         org: "Arbejdsmarkedsstyrelsen",
         years: "2002–2008",
         budgetOriginal: "ca. 300 mio. kr.",
@@ -172,7 +172,7 @@ const IT_CASE_STUDIES = [
 const SYSTEMIC_ROOT_CAUSES = [
     {
         id: "megaproject",
-        icon: "🎯",
+        icon: "",
         title: "Megaprojekt-fælden",
         description: "Store monolitiske systemer der skal løse alt på én gang. Ingen trinvis levering, ingen feedback loops.",
         frequency: "5 af 5 skandaler",
@@ -180,7 +180,7 @@ const SYSTEMIC_ROOT_CAUSES = [
     },
     {
         id: "requirements",
-        icon: "📝",
+        icon: "",
         title: "Kravspecifikation i blinde",
         description: "Organisationer kender ikke deres egne processer. Krav skrives af konsulenter der ikke forstår domænet.",
         frequency: "5 af 5 skandaler",
@@ -188,7 +188,7 @@ const SYSTEMIC_ROOT_CAUSES = [
     },
     {
         id: "procurement",
-        icon: "⚖️",
+        icon: "",
         title: "Udbudsregler tvinger vandfald",
         description: "EU-udbudsregler behandler IT som byggeri. Lineær proces med fastlåst scope, men software kræver iteration.",
         frequency: "4 af 5 skandaler",
@@ -196,7 +196,7 @@ const SYSTEMIC_ROOT_CAUSES = [
     },
     {
         id: "expertise",
-        icon: "🧠",
+        icon: "",
         title: "Tab af intern IT-ekspertise",
         description: "Privatisering i 1990'erne (Datacentralen, Kommunedata) fjernede al ekspertise fra staten. Nu hyres konsulenter til alt.",
         frequency: "Strukturelt problem",
@@ -204,7 +204,7 @@ const SYSTEMIC_ROOT_CAUSES = [
     },
     {
         id: "premature",
-        icon: "✂️",
+        icon: "",
         title: "Besparelser før systemet virker",
         description: "Medarbejdere fyres og gamle systemer nedlægges FØR det nye system er testet og i drift. Ingen plan B.",
         frequency: "3 af 5 skandaler",
@@ -212,7 +212,7 @@ const SYSTEMIC_ROOT_CAUSES = [
     },
     {
         id: "vendor",
-        icon: "🤥",
+        icon: "",
         title: "Leverandør-optimisme",
         description: "'Den der vinder er den der lyver.' Leverandører underbudgetterer for at vinde, vel vidende at scope vil vokse.",
         frequency: "4 af 5 skandaler",
@@ -220,7 +220,7 @@ const SYSTEMIC_ROOT_CAUSES = [
     },
     {
         id: "testing",
-        icon: "🧪",
+        icon: "",
         title: "Ingen tidlig brugertest",
         description: "Systemer bygges i årevis uden at rigtige brugere tester dem. Problemer opdages først ved go-live.",
         frequency: "5 af 5 skandaler",
@@ -228,7 +228,7 @@ const SYSTEMIC_ROOT_CAUSES = [
     },
     {
         id: "transparency",
-        icon: "🔒",
+        icon: "",
         title: "Manglende gennemsigtighed",
         description: "Dokumenter holdes fortrolige. Fejl skjules. Ingen offentlig ansvarlighed eller læring.",
         frequency: "3 af 5 skandaler",
@@ -243,7 +243,7 @@ const SYSTEMIC_ROOT_CAUSES = [
 const MODERN_SOLUTIONS = [
     {
         id: "ai-requirements",
-        icon: "🤖",
+        icon: "",
         title: "AI-drevet kravanalyse",
         rootCauses: ["requirements", "megaproject"],
         description: "AI kan analysere eksisterende arbejdsgange, dokumentation og brugeradfærd for automatisk at kortlægge processer. Det er præcis det POLSAG manglede fuldstændigt.",
@@ -258,7 +258,7 @@ const MODERN_SOLUTIONS = [
     },
     {
         id: "incremental",
-        icon: "🔄",
+        icon: "",
         title: "Trinvis levering med AI-feedback",
         rootCauses: ["megaproject", "testing", "premature"],
         description: "I stedet for megaprojekter: lever små moduler hver 2-4 uge. AI overvåger kvalitet, brugeroplevelse og fejl i realtid.",
@@ -273,7 +273,7 @@ const MODERN_SOLUTIONS = [
     },
     {
         id: "ai-testing",
-        icon: "🧪",
+        icon: "",
         title: "AI-drevet test & kvalitetssikring",
         rootCauses: ["testing", "vendor"],
         description: "AI kan generere og køre tusindvis af tests automatisk. Det er det der manglede i EFI, POLSAG og Sundhedsplatformen.",
@@ -288,7 +288,7 @@ const MODERN_SOLUTIONS = [
     },
     {
         id: "ai-procurement",
-        icon: "📊",
+        icon: "",
         title: "Data-drevet budgettering & risikostyring",
         rootCauses: ["procurement", "vendor"],
         description: "AI kan analysere historiske projektdata for at give realistiske budgetter og tidlige advarsler. Det er modgiften til leverandør-optimisme.",
@@ -303,7 +303,7 @@ const MODERN_SOLUTIONS = [
     },
     {
         id: "inhouse",
-        icon: "🏛️",
+        icon: "",
         title: "AI som intern ekspertise-forstærker",
         rootCauses: ["expertise"],
         description: "AI kan kompensere for den tabte interne IT-ekspertise og reducere afhængigheden af dyre konsulenter.",
@@ -318,7 +318,7 @@ const MODERN_SOLUTIONS = [
     },
     {
         id: "transparency-ai",
-        icon: "🔍",
+        icon: "",
         title: "Fuld gennemsigtighed med AI-dashboards",
         rootCauses: ["transparency"],
         description: "Realtids-dashboards drevet af AI der giver borgere og politikere indsigt i alle offentlige IT-projekters status.",

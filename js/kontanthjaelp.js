@@ -43,7 +43,7 @@ const KONTANTHJAELP_DATA = {
             id: "jobparat",
             name: "Jobparat",
             nameEn: "Job-ready",
-            icon: "👔",
+            icon: "",
             count: 14500,
             description: "Vurderet klar til at tage et job med det samme. Tælles med i ledighedsstatistikken.",
             requirement: "Skal aktivt søge job og stå til rådighed for arbejdsmarkedet.",
@@ -54,7 +54,7 @@ const KONTANTHJAELP_DATA = {
             id: "aktivitetsparat",
             name: "Aktivitetsparat",
             nameEn: "Activity-ready",
-            icon: "🔧",
+            icon: "",
             count: 71600,
             description: "Vurderet til IKKE at kunne tage et job lige nu pga. helbredsproblemer, sociale udfordringer eller manglende kompetencer.",
             requirement: "Skal deltage i aktiviteter der bringer dem tættere på arbejdsmarkedet.",
@@ -193,25 +193,25 @@ const KONTANTHJAELP_DATA = {
         effective: [
             {
                 method: "Privat virksomhedspraktik",
-                icon: "🏢",
+                icon: "",
                 effect: "Højeste beskæftigelseseffekt af alle tiltag.",
                 detail: "Mennesker der arbejder i rigtige virksomheder opbygger netværk, får referencer og viser arbejdsgivere deres kompetencer."
             },
             {
                 method: "IPS (Individual Placement and Support)",
-                icon: "🎯",
+                icon: "",
                 effect: "2x mere effektiv end traditionel revalidering.",
                 detail: "Place-then-train: Find job først, træn derefter. Modsat det traditionelle train-then-place."
             },
             {
                 method: "Tidlig indsats",
-                icon: "⏰",
+                icon: "",
                 effect: "Jo hurtigere indsats, jo bedre resultat.",
                 detail: "Langvarig ledighed forværrer problemet eksponentielt. Indsats i de første 3 måneder er afgørende."
             },
             {
                 method: "Uddannelse for unge",
-                icon: "🎓",
+                icon: "",
                 effect: "Ungereformen virkede dokumenterbart.",
                 detail: "At erstatte kontanthjælp med uddannelseshjælp for unge under 30 fik flere i uddannelse."
             },
@@ -219,19 +219,19 @@ const KONTANTHJAELP_DATA = {
         ineffective: [
             {
                 method: "Lavere ydelser som motivation",
-                icon: "📉",
+                icon: "",
                 effect: "Ingen effekt på beskæftigelse.",
                 detail: "Kontanthjælpsloftet fra 2016 reducerede ikke ledigheden. Det øgede børnefattigdom."
             },
             {
                 method: "Nytteindsats uden perspektiv",
-                icon: "🧹",
+                icon: "",
                 effect: "Begrænset effekt hvis det ikke fører til rigtige jobs.",
                 detail: "At rydde op i parker er ikke det samme som at opbygge kompetencer. Uden progression er det blot beskæftigelsesterapi."
             },
             {
                 method: "Kompleks sagsbehandling",
-                icon: "📋",
+                icon: "",
                 effect: "Dokumentationskrav tager tid fra den egentlige indsats.",
                 detail: "Sagsbehandlere bruger op til 60% af tiden på dokumentation og kun 40% på borgerkontakt."
             },

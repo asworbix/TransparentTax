@@ -42,7 +42,7 @@ const TAX_RATES = {
 const BUDGET_BREAKDOWN = [
     {
         id: "healthcare",
-        icon: "🏥",
+        icon: "",
         name: "Sundhedsvæsen",
         nameEn: "Healthcare",
         percent: 15.8,
@@ -52,7 +52,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "social",
-        icon: "🤝",
+        icon: "",
         name: "Social beskyttelse & overførsler",
         nameEn: "Social Protection",
         percent: 25.2,
@@ -62,7 +62,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "education",
-        icon: "🎓",
+        icon: "",
         name: "Uddannelse",
         nameEn: "Education",
         percent: 12.4,
@@ -72,7 +72,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "childcare",
-        icon: "👶",
+        icon: "",
         name: "Børnepasning & familie",
         nameEn: "Childcare & Family",
         percent: 5.2,
@@ -82,7 +82,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "eldercare",
-        icon: "👴",
+        icon: "",
         name: "Ældrepleje",
         nameEn: "Elderly Care",
         percent: 5.8,
@@ -92,7 +92,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "infrastructure",
-        icon: "🛤️",
+        icon: "",
         name: "Transport & infrastruktur",
         nameEn: "Transport & Infrastructure",
         percent: 5.1,
@@ -102,7 +102,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "defense",
-        icon: "🛡️",
+        icon: "",
         name: "Forsvar",
         nameEn: "Defense",
         percent: 3.8,
@@ -112,7 +112,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "justice",
-        icon: "⚖️",
+        icon: "",
         name: "Politi & retsvæsen",
         nameEn: "Police & Justice",
         percent: 2.0,
@@ -122,7 +122,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "environment",
-        icon: "🌿",
+        icon: "",
         name: "Miljø & klima",
         nameEn: "Environment & Climate",
         percent: 4.8,
@@ -132,7 +132,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "research",
-        icon: "🔬",
+        icon: "",
         name: "Forskning & innovation",
         nameEn: "Research & Innovation",
         percent: 3.5,
@@ -142,7 +142,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "culture",
-        icon: "🎭",
+        icon: "",
         name: "Kultur & fritid",
         nameEn: "Culture & Leisure",
         percent: 2.8,
@@ -152,7 +152,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "foreign_aid",
-        icon: "🌍",
+        icon: "",
         name: "Udviklingsbistand",
         nameEn: "Foreign Aid",
         percent: 2.1,
@@ -162,7 +162,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "administration",
-        icon: "🏛️",
+        icon: "",
         name: "Offentlig administration",
         nameEn: "Public Administration",
         percent: 6.4,
@@ -172,7 +172,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "debt",
-        icon: "📉",
+        icon: "",
         name: "Renter på statsgælden",
         nameEn: "National Debt Interest",
         percent: 1.5,
@@ -182,7 +182,7 @@ const BUDGET_BREAKDOWN = [
     },
     {
         id: "housing",
-        icon: "🏠",
+        icon: "",
         name: "Boligområdet",
         nameEn: "Housing",
         percent: 3.6,
@@ -259,14 +259,14 @@ function calculatePrivateCost(household, totalTax) {
                          PRIVATE_COSTS.hospitalDayRate * PRIVATE_COSTS.hospitalStayAvgDays;
 
     items.push({
-        icon: "🏥",
+        icon: "",
         name: "Sundhedsforsikring",
         publicCost: Math.round(totalTax * 0.158),
         privateCost: Math.round(healthInsurance),
         note: `${adults} voksen(e)${totalChildren > 0 ? ' + ' + totalChildren + ' barn' : ''}, fuld privat dækning`
     });
     items.push({
-        icon: "👨‍⚕️",
+        icon: "",
         name: "Lægebesøg & hospital",
         publicCost: 0, // included in healthcare above
         privateCost: Math.round(doctorCost + hospitalCost),
@@ -276,7 +276,7 @@ function calculatePrivateCost(household, totalTax) {
     // --- Childcare ---
     if (household.nursery > 0) {
         items.push({
-            icon: "👶",
+            icon: "",
             name: "Vuggestue/dagpleje",
             publicCost: Math.round(totalTax * 0.052 * (household.nursery / Math.max(1, totalChildren || 1))),
             privateCost: household.nursery * PRIVATE_COSTS.nurseryPerChild,
@@ -285,7 +285,7 @@ function calculatePrivateCost(household, totalTax) {
     }
     if (household.kindergarten > 0) {
         items.push({
-            icon: "🧒",
+            icon: "",
             name: "Børnehave",
             publicCost: Math.round(totalTax * 0.052 * (household.kindergarten / Math.max(1, totalChildren || 1))),
             privateCost: household.kindergarten * PRIVATE_COSTS.kindergartenPerChild,
@@ -296,7 +296,7 @@ function calculatePrivateCost(household, totalTax) {
     // --- Education ---
     if (household.school > 0) {
         items.push({
-            icon: "🎒",
+            icon: "",
             name: "Folkeskole (privatskole)",
             publicCost: Math.round(totalTax * 0.124 * 0.4), // ~40% of education budget is folkeskole
             privateCost: household.school * PRIVATE_COSTS.folkeskolePerChild,
@@ -305,7 +305,7 @@ function calculatePrivateCost(household, totalTax) {
     }
     if (household.highschool > 0) {
         items.push({
-            icon: "📚",
+            icon: "",
             name: "Gymnasium/erhvervsuddannelse",
             publicCost: Math.round(totalTax * 0.124 * 0.25),
             privateCost: household.highschool * PRIVATE_COSTS.highschoolPerChild,
@@ -314,7 +314,7 @@ function calculatePrivateCost(household, totalTax) {
     }
     if (household.university > 0) {
         items.push({
-            icon: "🎓",
+            icon: "",
             name: "Universitet (tuition + tabt SU)",
             publicCost: Math.round(totalTax * 0.124 * 0.35),
             privateCost: household.university * PRIVATE_COSTS.universityPerPerson,
@@ -325,7 +325,7 @@ function calculatePrivateCost(household, totalTax) {
     // --- Transport ---
     if (household.transport > 0) {
         items.push({
-            icon: "🚆",
+            icon: "",
             name: "Offentlig transport (subsidieandel)",
             publicCost: Math.round(totalTax * 0.051 * 0.3),
             privateCost: household.transport * PRIVATE_COSTS.publicTransportPerPerson,
@@ -336,7 +336,7 @@ function calculatePrivateCost(household, totalTax) {
     // --- Library ---
     if (household.library) {
         items.push({
-            icon: "📖",
+            icon: "",
             name: "Bibliotek & medieadgang",
             publicCost: Math.round(totalTax * 0.028 * 0.15),
             privateCost: PRIVATE_COSTS.libraryPerHousehold,
@@ -346,18 +346,18 @@ function calculatePrivateCost(household, totalTax) {
 
     // --- Shared services everyone uses ---
     const sharedServices = [
-        { icon: "🛡️", name: "Forsvar & sikkerhed", cost: PRIVATE_COSTS.perCapitaDefense, note: "Din andel af nationalt forsvar. Kan ikke fravælges" },
-        { icon: "⚖️", name: "Politi & retsvæsen", cost: PRIVATE_COSTS.perCapitaPolice, note: "Retssikkerhed, politibeskyttelse, domstole" },
-        { icon: "🛤️", name: "Veje & infrastruktur", cost: PRIVATE_COSTS.perCapitaInfrastructure, note: "Veje, broer, cykelstier. Brugt af alle dagligt" },
-        { icon: "🌿", name: "Miljø & klima", cost: PRIVATE_COSTS.perCapitaEnvironment, note: "Rent vand, affald, grøn omstilling" },
-        { icon: "🏛️", name: "Administration & digitalisering", cost: PRIVATE_COSTS.perCapitaAdministration, note: "MitID, Borger.dk, digital post, skatteadministration" },
-        { icon: "🔬", name: "Forskning & innovation", cost: PRIVATE_COSTS.perCapitaResearch, note: "Medicinsk forskning, teknologi, universitetsforskning" },
-        { icon: "🤝", name: "Socialt sikkerhedsnet", cost: PRIVATE_COSTS.perCapitaSocialSafety, note: "Dagpenge, kontanthjælp, pension. Din forsikring mod uforudsete hændelser" },
-        { icon: "👴", name: "Ældrepleje (din fremtidige pleje)", cost: PRIVATE_COSTS.perCapitaEldercare, note: "Du betaler nu. Du bruger det når du bliver ældre" },
-        { icon: "🏠", name: "Boligstøtte & alment byggeri", cost: PRIVATE_COSTS.perCapitaHousing, note: "Holder boligmarkedet tilgængeligt for alle" },
-        { icon: "🎭", name: "Kultur, sport & foreningsliv", cost: PRIVATE_COSTS.perCapitaCulture, note: "Museer, biblioteker, DR, sportsfaciliteter" },
-        { icon: "🌍", name: "Udviklingsbistand", cost: PRIVATE_COSTS.perCapitaForeignAid, note: "Danmarks internationale forpligtelser" },
-        { icon: "📉", name: "Renter på statsgæld", cost: PRIVATE_COSTS.perCapitaDebt, note: "Lav gæld = lave renter. Et tegn på sund økonomi" },
+        { icon: "", name: "Forsvar & sikkerhed", cost: PRIVATE_COSTS.perCapitaDefense, note: "Din andel af nationalt forsvar. Kan ikke fravælges" },
+        { icon: "", name: "Politi & retsvæsen", cost: PRIVATE_COSTS.perCapitaPolice, note: "Retssikkerhed, politibeskyttelse, domstole" },
+        { icon: "", name: "Veje & infrastruktur", cost: PRIVATE_COSTS.perCapitaInfrastructure, note: "Veje, broer, cykelstier. Brugt af alle dagligt" },
+        { icon: "", name: "Miljø & klima", cost: PRIVATE_COSTS.perCapitaEnvironment, note: "Rent vand, affald, grøn omstilling" },
+        { icon: "", name: "Administration & digitalisering", cost: PRIVATE_COSTS.perCapitaAdministration, note: "MitID, Borger.dk, digital post, skatteadministration" },
+        { icon: "", name: "Forskning & innovation", cost: PRIVATE_COSTS.perCapitaResearch, note: "Medicinsk forskning, teknologi, universitetsforskning" },
+        { icon: "", name: "Socialt sikkerhedsnet", cost: PRIVATE_COSTS.perCapitaSocialSafety, note: "Dagpenge, kontanthjælp, pension. Din forsikring mod uforudsete hændelser" },
+        { icon: "", name: "Ældrepleje (din fremtidige pleje)", cost: PRIVATE_COSTS.perCapitaEldercare, note: "Du betaler nu. Du bruger det når du bliver ældre" },
+        { icon: "", name: "Boligstøtte & alment byggeri", cost: PRIVATE_COSTS.perCapitaHousing, note: "Holder boligmarkedet tilgængeligt for alle" },
+        { icon: "", name: "Kultur, sport & foreningsliv", cost: PRIVATE_COSTS.perCapitaCulture, note: "Museer, biblioteker, DR, sportsfaciliteter" },
+        { icon: "", name: "Udviklingsbistand", cost: PRIVATE_COSTS.perCapitaForeignAid, note: "Danmarks internationale forpligtelser" },
+        { icon: "", name: "Renter på statsgæld", cost: PRIVATE_COSTS.perCapitaDebt, note: "Lav gæld = lave renter. Et tegn på sund økonomi" },
     ];
 
     sharedServices.forEach(svc => {
@@ -383,7 +383,7 @@ function calculatePrivateCost(household, totalTax) {
  */
 const IMPACT_EXAMPLES = [
     {
-        icon: "🏥",
+        icon: "",
         threshold: 0, // always show
         titleFn: (tax) => `${formatDKK(tax * 0.158)} til sundhedsvæsenet`,
         descFn: (tax) => {
@@ -392,7 +392,7 @@ const IMPACT_EXAMPLES = [
         }
     },
     {
-        icon: "🎓",
+        icon: "",
         threshold: 0,
         titleFn: (tax) => `${formatDKK(tax * 0.124)} til uddannelse`,
         descFn: (tax) => {
@@ -401,7 +401,7 @@ const IMPACT_EXAMPLES = [
         }
     },
     {
-        icon: "👶",
+        icon: "",
         threshold: 0,
         titleFn: (tax) => `${formatDKK(tax * 0.052)} til børnepasning`,
         descFn: (tax) => {
@@ -410,7 +410,7 @@ const IMPACT_EXAMPLES = [
         }
     },
     {
-        icon: "🛤️",
+        icon: "",
         threshold: 0,
         titleFn: (tax) => `${formatDKK(tax * 0.051)} til infrastruktur`,
         descFn: (tax) => {
@@ -419,7 +419,7 @@ const IMPACT_EXAMPLES = [
         }
     },
     {
-        icon: "👴",
+        icon: "",
         threshold: 0,
         titleFn: (tax) => `${formatDKK(tax * 0.058)} til ældrepleje`,
         descFn: (tax) => {
@@ -428,7 +428,7 @@ const IMPACT_EXAMPLES = [
         }
     },
     {
-        icon: "🔬",
+        icon: "",
         threshold: 50000,
         titleFn: (tax) => `${formatDKK(tax * 0.035)} til forskning`,
         descFn: () => `Dansk forskning har givet verden insulin, Bluetooth-teknologi og banebrydende kræftbehandling. Dit bidrag finansierer fremtidens løsninger.`

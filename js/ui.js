@@ -103,7 +103,7 @@ function renderOperationalBreakdown(sectorKey) {
 
     const customLabels = sector.customLabels || {};
 
-    let html = `<h4>${sector.icon || '📊'} ${sector.label}</h4><div class="op-bars">`;
+    let html = `<h4>${sector.icon ? sector.icon + ' ' : ''}${sector.label}</h4><div class="op-bars">`;
 
     entries.forEach(([key, pct]) => {
         const label = customLabels[key] || COST_LABELS[key] || key;
@@ -186,7 +186,7 @@ function renderAppropriationRules() {
         return `
             <div class="rule-card ${canCarry ? 'rule-carry' : 'rule-lapse'}">
                 <div class="rule-header">
-                    <span class="rule-status">${canCarry ? '🔄 Kan videreføres' : '⛔ Bortfalder'}</span>
+                    <span class="rule-status">${canCarry ? 'Kan videreføres' : 'Bortfalder'}</span>
                 </div>
                 <h5>${rule.name}</h5>
                 <p class="rule-name-en">${rule.nameEn}</p>
@@ -377,19 +377,19 @@ function renderSavingsCalculator() {
         <div class="savings-breakdown">
             <div class="sb-row">
                 <div class="sb-label">
-                    <span>🤖</span> AI-kravanalyse (sparer 40% af fejlslagne projekter)
+                    AI-kravanalyse (sparer 40% af fejlslagne projekter)
                 </div>
                 <div class="sb-amount sb-green">-${reqSaving.toFixed(1)} mia. kr.</div>
             </div>
             <div class="sb-row">
                 <div class="sb-label">
-                    <span>🔄</span> Trinvis levering + AI-test (sparer 30% yderligere)
+                    Trinvis levering + AI-test (sparer 30% yderligere)
                 </div>
                 <div class="sb-amount sb-green">-${devSaving.toFixed(1)} mia. kr.</div>
             </div>
             <div class="sb-row">
                 <div class="sb-label">
-                    <span>🏛️</span> AI erstatter konsulenter (50% reduktion)
+                    AI erstatter konsulenter (50% reduktion)
                 </div>
                 <div class="sb-amount sb-green">-${consultSaving.toFixed(1)} mia. kr.</div>
             </div>
@@ -419,7 +419,7 @@ function renderSavingsCalculator() {
         </div>
 
         <div class="spending-insight-box">
-            <span class="insight-icon">💡</span>
+            <span class="insight-icon"></span>
             <div>
                 <strong>Norge vs. Danmark</strong>
                 <p>Norge har 8% gennemsnitlig budgetoverskridelse på offentlige IT-projekter. Danmark har 108%. Forskellen? Norge bruger trinvis levering, intern ekspertise og tidlig brugertest - præcis det AI kan accelerere og skalere.</p>
@@ -537,7 +537,7 @@ function renderKHOverview() {
         </div>
 
         <div class="spending-insight-box">
-            <span class="insight-icon">📊</span>
+            <span class="insight-icon"></span>
             <div>
                 <strong>Demografisk fordeling</strong>
                 <p>${d.nonWesternPct}% af ikke-vestlige indvandrere i den erhvervsaktive alder er på kontanthjælp, mod ${d.danishOriginPct}% af danskere med dansk oprindelse. ${d.mindstesatsNonWesternPct}% af modtagere på mindstesatsen har ikke-vestlig baggrund.</p>
@@ -606,7 +606,7 @@ function renderKHResearch() {
         <div class="kh-research-list">
             ${research.findings.map(f => `
                 <div class="kh-research-card ${f.positive ? 'kh-research-positive' : 'kh-research-negative'}">
-                    <div class="kh-research-indicator">${f.positive ? '✅' : '❌'}</div>
+                    <div class="kh-research-indicator">${f.positive ? '+' : '-'}</div>
                     <div class="kh-research-content">
                         <h4>${f.finding}</h4>
                         <p>${f.detail}</p>

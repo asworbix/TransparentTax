@@ -111,7 +111,7 @@ const APPROPRIATION_RULES = {
 const BUDGET_VS_ACTUAL = [
     {
         sector: "Sundhedsvæsen",
-        icon: "🏥",
+        icon: "",
         budgetBn: 283.0,  // ~278 actual + slight budget overestimate; health expenditure rose 4% in 2024
         actualBn: 278.0,  // DST: healthcare expenditures 278 mia. kr in 2024; hospitals ~128 mia. (46%)
         color: "#ef4444",
@@ -119,7 +119,7 @@ const BUDGET_VS_ACTUAL = [
     },
     {
         sector: "Social beskyttelse",
-        icon: "🤝",
+        icon: "",
         budgetBn: 340.0,  // Largest single post; indkomstoverførsler budgetteret til 322.75 mia. under delloft + additional transfers
         actualBn: 331.0,  // Lavere ledighed end forventet; sociale pensioner 223.2 mia + øvrige persontilskud 87.2 mia + tjenestemandspensioner 30 mia = ~340 mia from statsregnskab but some is state-only
         color: "#f97316",
@@ -127,7 +127,7 @@ const BUDGET_VS_ACTUAL = [
     },
     {
         sector: "Uddannelse",
-        icon: "🎓",
+        icon: "",
         budgetBn: 162.0,  // Includes folkeskole (municipal), gymnasier, universities, SU
         actualBn: 156.5,  // Underspending on SU (fewer recipients), delayed university projects
         color: "#3b82f6",
@@ -135,7 +135,7 @@ const BUDGET_VS_ACTUAL = [
     },
     {
         sector: "Forsvar",
-        icon: "🛡️",
+        icon: "",
         budgetBn: 42.0,   // Finansloven 2024 defense budget 36.2 mia. + additional security/NATO
         actualBn: 36.2,   // fmn.dk: total defence budget 36.2 mia. kr on Finansloven 2024
         color: "#6366f1",
@@ -143,7 +143,7 @@ const BUDGET_VS_ACTUAL = [
     },
     {
         sector: "Transport & infrastruktur",
-        icon: "🛤️",
+        icon: "",
         budgetBn: 67.0,
         actualBn: 59.5,
         color: "#06b6d4",
@@ -151,7 +151,7 @@ const BUDGET_VS_ACTUAL = [
     },
     {
         sector: "Miljø & klima",
-        icon: "🌿",
+        icon: "",
         budgetBn: 62.5,
         actualBn: 57.0,
         color: "#22c55e",
@@ -159,7 +159,7 @@ const BUDGET_VS_ACTUAL = [
     },
     {
         sector: "Politi & retsvæsen",
-        icon: "⚖️",
+        icon: "",
         budgetBn: 26.0,   // 0.9% of GDP = ~26 mia. (Eurostat COFOG: public order & safety)
         actualBn: 25.3,
         color: "#8b5cf6",
@@ -167,7 +167,7 @@ const BUDGET_VS_ACTUAL = [
     },
     {
         sector: "Offentlig administration",
-        icon: "🏛️",
+        icon: "",
         budgetBn: 84.0,   // Delloft for driftsudgifter 281 mia.; admin share ~30%
         actualBn: 80.0,
         color: "#78716c",
@@ -214,7 +214,7 @@ const OPERATIONAL_BREAKDOWN = {
     // Per-sector breakdown: where the money goes INSIDE each sector
     healthcare: {
         label: "Sundhedsvæsen (278 mia. kr i 2024)",
-        icon: "🏥",
+        icon: "",
         salaries: 64.0,        // Hospitals are very labor-intensive; DK above EU avg
         medicine: 12.0,        // Medicin; only 42% of pharma spending publicly covered (EU: 59%)
         buildings: 8.0,        // Massive hospital construction program (supersygehuse)
@@ -228,7 +228,7 @@ const OPERATIONAL_BREAKDOWN = {
     },
     education: {
         label: "Uddannelse (156,5 mia. kr i 2024)",
-        icon: "🎓",
+        icon: "",
         salaries: 72.0,        // Highest salary share - teachers, professors
         su: 8.0,               // SU-udbetalinger
         buildings: 7.0,        // School and university buildings
@@ -242,7 +242,7 @@ const OPERATIONAL_BREAKDOWN = {
     },
     administration: {
         label: "Offentlig administration (80 mia. kr i 2024)",
-        icon: "🏛️",
+        icon: "",
         salaries: 48.0,
         buildings: 8.0,
         equipment: 2.5,
@@ -252,7 +252,7 @@ const OPERATIONAL_BREAKDOWN = {
     },
     defense: {
         label: "Forsvar (36,2 mia. kr i 2024)",
-        icon: "🛡️",
+        icon: "",
         salaries: 42.0,
         materiel: 25.0,        // Materiel spending rising with new forsvarsforlig
         buildings: 10.0,
@@ -371,7 +371,7 @@ const QUARTERLY_FLOW = {
  */
 const SPENDING_ISSUES = [
     {
-        icon: "💻",
+        icon: "",
         title: "IT-skandaler",
         amount: "Statens IT-projekter skredet med 3,5 mia. kr over 4 år (97 projekter)",
         examples: [
@@ -387,7 +387,7 @@ const SPENDING_ISSUES = [
         severity: "high"
     },
     {
-        icon: "🧑‍💼",
+        icon: "",
         title: "Konsulentforbrug",
         amount: "Ca. 12-15 mia. kr./år totalt; besparelsesmål på 3 mia./år (kun 2 mia. nået)",
         examples: [
@@ -400,7 +400,7 @@ const SPENDING_ISSUES = [
         severity: "high"
     },
     {
-        icon: "🏗️",
+        icon: "",
         title: "Anlægsoverskridelser",
         amount: "Typisk 20-40% budgetoverskridelse på store projekter",
         examples: [
@@ -413,7 +413,7 @@ const SPENDING_ISSUES = [
         severity: "high"
     },
     {
-        icon: "📊",
+        icon: "",
         title: "Administrativ vækst",
         amount: "Offentlig beskæftigelsesandel rekordlav (27,2%), men ledere steget 30% på 15 år",
         examples: [
@@ -427,7 +427,7 @@ const SPENDING_ISSUES = [
         severity: "medium"
     },
     {
-        icon: "📅",
+        icon: "",
         title: "Q4-forbrug (\"december-feber\")",
         amount: "~31% af årsbudgettet bruges i Q4 (vs. 25% ved jævn fordeling)",
         examples: [
@@ -440,7 +440,7 @@ const SPENDING_ISSUES = [
         severity: "medium"
     },
     {
-        icon: "🔄",
+        icon: "",
         title: "Dobbeltadministration",
         amount: "Stat, 5 regioner og 98 kommuner duplikerer opgaver",
         examples: [
