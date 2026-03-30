@@ -225,8 +225,8 @@ function renderBudgetVsActual(totalTax) {
     const totalActual = BUDGET_VS_ACTUAL.reduce((s, r) => s + r.actualBn, 0);
     const totalUnused = totalBudget - totalActual;
 
-    // User's share scaling factor (their tax as fraction of total tax revenue ~1,290 mia)
-    const userShare = totalTax / 1290000000000;
+    // User's share scaling factor (their tax as fraction of total public expenditure ~1,357 mia)
+    const userShare = totalTax / 1357000000000;
 
     let html = `
         <div class="ba-header">
@@ -365,6 +365,33 @@ function renderQuarterlyFlow(totalTax) {
     document.getElementById('carryover-text').textContent = QUARTERLY_FLOW.carryoverExplanation;
     document.getElementById('carryover-amount-value').textContent =
         QUARTERLY_FLOW.totalCarryoverBn + ' mia. kr.';
+
+    // Appropriation rules
+    renderAppropriationRules();
+}
+
+function renderAppropriationRules() {
+    const container = document.getElementById('appropriation-rules');
+    if (!container) return;
+
+    const rules = APPROPRIATION_RULES;
+    const ruleKeys = Object.keys(rules);
+
+    container.innerHTML = ruleKeys.map(key => {
+        const rule = rules[key];
+        const canCarry = rule.carryForward;
+        return `
+            <div class="rule-card ${canCarry ? 'rule-carry' : 'rule-lapse'}">
+                <div class="rule-header">
+                    <span class="rule-status">${canCarry ? '🔄 Kan videreføres' : '⛔ Bortfalder'}</span>
+                </div>
+                <h5>${rule.name}</h5>
+                <p class="rule-name-en">${rule.nameEn}</p>
+                <p class="rule-limit"><strong>Begrænsning:</strong> ${rule.limit}</p>
+                <p class="rule-lapse-text"><strong>Ubrugte midler:</strong> ${rule.lapse}</p>
+                <p class="rule-source">${rule.source}</p>
+            </div>`;
+    }).join('');
 }
 
 function renderSpendingIssues() {

@@ -1142,6 +1142,91 @@ header {
     line-height: 1.5;
 }
 
+/* === Appropriation Rules === */
+.rules-box {
+    margin-top: 1.5rem;
+    padding: 1.25rem;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+}
+
+.rules-box h4 {
+    font-size: 0.95rem;
+    margin-bottom: 0.4rem;
+}
+
+.rules-intro {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-bottom: 1rem;
+}
+
+.rules-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 0.75rem;
+}
+
+.rule-card {
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border);
+    font-size: 0.82rem;
+    line-height: 1.5;
+}
+
+.rule-carry {
+    background: rgba(34, 197, 94, 0.05);
+    border-color: rgba(34, 197, 94, 0.2);
+}
+
+.rule-lapse {
+    background: rgba(239, 68, 68, 0.05);
+    border-color: rgba(239, 68, 68, 0.2);
+}
+
+.rule-header {
+    margin-bottom: 0.5rem;
+}
+
+.rule-status {
+    font-size: 0.78rem;
+    font-weight: 600;
+}
+
+.rule-carry .rule-status { color: var(--green); }
+.rule-lapse .rule-status { color: var(--accent-light); }
+
+.rule-card h5 {
+    font-size: 0.9rem;
+    font-weight: 600;
+    margin-bottom: 0.15rem;
+}
+
+.rule-name-en {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    font-style: italic;
+    margin-bottom: 0.5rem;
+}
+
+.rule-limit, .rule-lapse-text {
+    color: var(--text-muted);
+    margin-bottom: 0.3rem;
+}
+
+.rule-limit strong, .rule-lapse-text strong {
+    color: var(--text);
+}
+
+.rule-source {
+    font-size: 0.72rem;
+    color: var(--text-muted);
+    opacity: 0.6;
+    margin-top: 0.4rem;
+}
+
 /* === Impact Section === */
 .impact-list {
     display: grid;
