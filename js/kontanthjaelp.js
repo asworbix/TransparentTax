@@ -201,7 +201,7 @@ const KONTANTHJAELP_DATA = {
                 method: "IPS (Individual Placement and Support)",
                 icon: "🎯",
                 effect: "2x mere effektiv end traditionel revalidering.",
-                detail: "Place-then-train: Find job først, trræn derefter. Modsat det traditionelle train-then-place."
+                detail: "Place-then-train: Find job først, træn derefter. Modsat det traditionelle train-then-place."
             },
             {
                 method: "Tidlig indsats",

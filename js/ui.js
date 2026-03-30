@@ -341,7 +341,7 @@ function renderSolutions() {
                 ${sol.howItWorks.map(step => `<li>${step}</li>`).join('')}
             </ul>
             <div class="solution-orbix">
-                <strong>Orbix-tilgangen:</strong> ${sol.orbixAngle}
+                <strong><a href="https://orbixcore.ai" target="_blank" rel="noopener" class="orbix-inline-link">Orbix</a>:</strong> ${sol.orbixAngle}
             </div>
         </div>
     `).join('');
