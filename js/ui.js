@@ -421,6 +421,223 @@ function renderPublicSpending(totalTax) {
     renderSpendingIssues();
 }
 
+/**
+ * IT Deep-Dive Section rendering
+ */
+
+function initDeepDiveTabs() {
+    const section = document.getElementById('it-deepdive-section');
+    if (!section) return;
+    const tabs = section.querySelectorAll('.spending-tab');
+    tabs.forEach(tab => {
+        tab.addEventListener('click', function () {
+            tabs.forEach(t => t.classList.remove('active'));
+            section.querySelectorAll('.spending-tab-content').forEach(c => c.classList.remove('active'));
+            this.classList.add('active');
+            section.querySelector('#tab-' + this.dataset.tab).classList.add('active');
+        });
+    });
+}
+
+function renderCaseStudies() {
+    const container = document.getElementById('case-studies-list');
+    if (!container) return;
+
+    container.innerHTML = IT_CASE_STUDIES.map(cs => {
+        const severityClass = cs.severity === 'catastrophic' ? 'case-catastrophic' : 'case-critical';
+        return `
+        <div class="case-card ${severityClass}">
+            <div class="case-header" onclick="this.parentElement.classList.toggle('case-open')">
+                <div class="case-title-row">
+                    <span class="case-icon">${cs.icon}</span>
+                    <div>
+                        <h4>${cs.name}</h4>
+                        <span class="case-org">${cs.org} — ${cs.years}</span>
+                    </div>
+                </div>
+                <div class="case-stats">
+                    <div class="case-stat">
+                        <span class="case-stat-label">Budget</span>
+                        <span class="case-stat-value">${cs.budgetOriginal}</span>
+                    </div>
+                    <div class="case-stat">
+                        <span class="case-stat-label">Reelt</span>
+                        <span class="case-stat-value case-stat-over">${cs.budgetFinal}</span>
+                    </div>
+                    <div class="case-stat">
+                        <span class="case-stat-label">Resultat</span>
+                        <span class="case-stat-value case-stat-outcome">${cs.outcome}</span>
+                    </div>
+                </div>
+                <span class="case-expand-icon">+</span>
+            </div>
+            <div class="case-body">
+                ${cs.lostValue ? `<div class="case-lost"><strong>Tabt værdi:</strong> ${cs.lostValue}</div>` : ''}
+                <h5>Tidslinje</h5>
+                <div class="case-timeline">
+                    ${cs.timeline.map(t => `
+                        <div class="tl-item">
+                            <span class="tl-year">${t.year}</span>
+                            <span class="tl-event">${t.event}</span>
+                        </div>
+                    `).join('')}
+                </div>
+                <h5>Hvad gik galt?</h5>
+                <div class="case-causes">
+                    ${cs.rootCauses.map(rc => `
+                        <div class="rc-item">
+                            <strong>${rc.cause}</strong>
+                            <p>${rc.detail}</p>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        </div>`;
+    }).join('');
+}
+
+function renderRootCauses() {
+    const container = document.getElementById('root-causes-grid');
+    if (!container) return;
+
+    container.innerHTML = SYSTEMIC_ROOT_CAUSES.map(rc => `
+        <div class="rc-card" style="border-left-color: ${rc.color};">
+            <div class="rc-card-header">
+                <span class="rc-card-icon">${rc.icon}</span>
+                <h4>${rc.title}</h4>
+            </div>
+            <p>${rc.description}</p>
+            <span class="rc-frequency">${rc.frequency}</span>
+        </div>
+    `).join('');
+}
+
+function renderSolutions() {
+    const container = document.getElementById('solutions-list');
+    if (!container) return;
+
+    container.innerHTML = MODERN_SOLUTIONS.map(sol => `
+        <div class="solution-card">
+            <div class="solution-header">
+                <span class="solution-icon">${sol.icon}</span>
+                <div>
+                    <h4>${sol.title}</h4>
+                    <span class="solution-saving">${sol.savings}</span>
+                </div>
+            </div>
+            <p class="solution-desc">${sol.description}</p>
+            <div class="solution-addresses">
+                <span class="solution-addresses-label">Adresserer:</span>
+                ${sol.rootCauses.map(rcId => {
+                    const rc = SYSTEMIC_ROOT_CAUSES.find(r => r.id === rcId);
+                    return rc ? `<span class="solution-tag" style="border-color: ${rc.color}; color: ${rc.color};">${rc.title}</span>` : '';
+                }).join('')}
+            </div>
+            <h5>Hvordan virker det?</h5>
+            <ul class="solution-steps">
+                ${sol.howItWorks.map(step => `<li>${step}</li>`).join('')}
+            </ul>
+            <div class="solution-orbix">
+                <strong>Orbix-tilgangen:</strong> ${sol.orbixAngle}
+            </div>
+        </div>
+    `).join('');
+}
+
+function renderSavingsCalculator(totalTax) {
+    const container = document.getElementById('savings-calculator');
+    if (!container) return;
+
+    const s = IT_WASTE_SUMMARY;
+    // User's proportional share of IT waste (25 mia over 15 years = ~1.67 mia/year)
+    const annualITWaste = s.totalWastedBn / 15; // ~1.67 mia/year
+    const totalPublicExpenditure = 1357; // mia
+    const userITWasteShare = Math.round((annualITWaste / totalPublicExpenditure) * totalTax);
+    const userConsultantShare = Math.round((s.annualConsultantBn / totalPublicExpenditure) * totalTax);
+
+    // Savings with AI
+    const reqSaving = Math.round(userITWasteShare * s.potentialSavingsAI.requirementsPhase);
+    const devSaving = Math.round(userITWasteShare * s.potentialSavingsAI.developmentPhase);
+    const consultSaving = Math.round(userConsultantShare * s.potentialSavingsAI.consultantReduction);
+    const totalSaving = reqSaving + devSaving + consultSaving;
+
+    container.innerHTML = `
+        <div class="savings-grid">
+            <div class="savings-card savings-waste">
+                <div class="savings-label">Din andel af spildte IT-midler pr. år</div>
+                <div class="savings-amount">${formatDKK(userITWasteShare)}</div>
+                <div class="savings-note">Baseret på ~${annualITWaste.toFixed(1)} mia. kr./år i fejlslagne IT-projekter</div>
+            </div>
+            <div class="savings-card savings-consultant">
+                <div class="savings-label">Din andel af konsulentudgifter pr. år</div>
+                <div class="savings-amount">${formatDKK(userConsultantShare)}</div>
+                <div class="savings-note">Baseret på ${s.annualConsultantBn} mia. kr./år til eksterne konsulenter</div>
+            </div>
+        </div>
+
+        <h4>Hvis vi brugte AI og moderne metoder:</h4>
+        <div class="savings-breakdown">
+            <div class="sb-row">
+                <div class="sb-label">
+                    <span>🤖</span> AI-kravanalyse (sparer 40% af fejlslagne projekter)
+                </div>
+                <div class="sb-amount sb-green">−${formatDKK(reqSaving)}</div>
+            </div>
+            <div class="sb-row">
+                <div class="sb-label">
+                    <span>🔄</span> Trinvis levering + AI-test (sparer 30% yderligere)
+                </div>
+                <div class="sb-amount sb-green">−${formatDKK(devSaving)}</div>
+            </div>
+            <div class="sb-row">
+                <div class="sb-label">
+                    <span>🏛️</span> AI erstatter konsulenter (50% reduktion)
+                </div>
+                <div class="sb-amount sb-green">−${formatDKK(consultSaving)}</div>
+            </div>
+            <div class="sb-row sb-total">
+                <div class="sb-label"><strong>Din potentielle besparelse pr. år</strong></div>
+                <div class="sb-amount sb-green"><strong>${formatDKK(totalSaving)}</strong></div>
+            </div>
+        </div>
+
+        <div class="savings-context">
+            <div class="savings-stat">
+                <div class="savings-stat-value">${s.avgOverrunPct}%</div>
+                <div class="savings-stat-label">Gennemsnitlig budgetoverskridelse (DK)</div>
+            </div>
+            <div class="savings-stat">
+                <div class="savings-stat-value">${s.norwayOverrunPct}%</div>
+                <div class="savings-stat-label">Gennemsnitlig budgetoverskridelse (Norge)</div>
+            </div>
+            <div class="savings-stat">
+                <div class="savings-stat-value">${s.projectsFlagged}/${s.projectsMonitored}</div>
+                <div class="savings-stat-label">Projekter med advarselslamper (IT-rådet)</div>
+            </div>
+            <div class="savings-stat">
+                <div class="savings-stat-value">${s.projectsRedLight}</div>
+                <div class="savings-stat-label">Projekter med rød status (kritisk)</div>
+            </div>
+        </div>
+
+        <div class="spending-insight-box">
+            <span class="insight-icon">💡</span>
+            <div>
+                <strong>Norge vs. Danmark</strong>
+                <p>Norge har 8% gennemsnitlig budgetoverskridelse på offentlige IT-projekter. Danmark har 108%. Forskellen? Norge bruger trinvis levering, intern ekspertise og tidlig brugertest — præcis det AI kan accelerere og skalere.</p>
+            </div>
+        </div>
+    `;
+}
+
+function renderITDeepDive(totalTax) {
+    initDeepDiveTabs();
+    renderCaseStudies();
+    renderRootCauses();
+    renderSolutions();
+    renderSavingsCalculator(totalTax);
+}
+
 function showResults() {
     const results = document.getElementById('results');
     results.classList.remove('hidden');

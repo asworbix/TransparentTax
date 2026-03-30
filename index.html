@@ -258,6 +258,59 @@
                 <p class="comparison-footnote">* Private priser er baseret på gennemsnitlige danske markedspriser 2025. Sundhedsforsikring er baseret på sammenlignelige internationale private systemer (USA/CH). Infrastruktur, forsvar, politi m.fl. er beregnet som din andel af befolkningens samlede omkostning.</p>
             </section>
 
+            <!-- IT DEEP-DIVE - Scandals & Modern Solutions -->
+            <section id="it-deepdive-section" class="card">
+                <h2>IT-Skandalerne — Hvad Gik Galt, og Hvad Kan Gøres Bedre?</h2>
+                <p class="section-desc">Danmark har brugt milliarder på IT-projekter der aldrig virkede. Her er de detaljerede historier — og hvordan AI og moderne metoder kunne have forhindret det.</p>
+
+                <!-- Deep-dive tabs -->
+                <div class="spending-tabs">
+                    <button class="spending-tab active" data-tab="cases">Sagerne</button>
+                    <button class="spending-tab" data-tab="rootcauses">Systemiske Årsager</button>
+                    <button class="spending-tab" data-tab="solutions">En Bedre Vej</button>
+                    <button class="spending-tab" data-tab="savings">Hvad Kunne Vi Spare?</button>
+                </div>
+
+                <!-- Tab: Case Studies -->
+                <div id="tab-cases" class="spending-tab-content active">
+                    <p class="tab-intro">Klik på en sag for at se den fulde tidslinje og hvad der gik galt.</p>
+                    <div id="case-studies-list" class="case-studies-list">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Tab: Root Causes -->
+                <div id="tab-rootcauses" class="spending-tab-content">
+                    <p class="tab-intro">ITU-professor Søren Lauesen analyserede 5 store offentlige IT-projekter og fandt 36 fejl. Her er de 8 systemiske årsager der gik igen.</p>
+                    <div id="root-causes-grid" class="root-causes-grid">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+
+                <!-- Tab: Modern Solutions -->
+                <div id="tab-solutions" class="spending-tab-content">
+                    <p class="tab-intro">Moderne teknologi — især AI — kan adressere hver eneste af de systemiske fejl. Her er hvordan.</p>
+                    <div id="solutions-list" class="solutions-list">
+                        <!-- Filled by JS -->
+                    </div>
+                    <div class="orbix-banner">
+                        <div class="orbix-banner-content">
+                            <h3>Orbix — AI-drevet softwareudvikling</h3>
+                            <p>Orbix bygger software med AI i kernen af processen: fra kravanalyse og arkitektur til test og deployment. Resultatet er hurtigere levering, færre fejl og fuld gennemsigtighed — alt det de offentlige IT-skandaler manglede.</p>
+                            <a href="https://orbixcore.ai" target="_blank" rel="noopener" class="orbix-link">Besøg orbixcore.ai</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tab: Savings Calculator -->
+                <div id="tab-savings" class="spending-tab-content">
+                    <p class="tab-intro">Hvis Danmark havde brugt moderne AI-drevne metoder, hvor mange af dine skattekroner kunne være sparet?</p>
+                    <div id="savings-calculator" class="savings-calculator">
+                        <!-- Filled by JS -->
+                    </div>
+                </div>
+            </section>
+
             <!-- PUBLIC SPENDING INSIGHTS - Follow the money -->
             <section id="spending-section" class="card">
                 <h2>Følg Pengene — Hvad Gør Den Offentlige Sektor Med Dem?</h2>
@@ -406,6 +459,7 @@
 
     <script src="js/taxData.js"></script>
     <script src="js/publicSpending.js"></script>
+    <script src="js/itDeepDive.js"></script>
     <script src="js/taxCalculator.js"></script>
     <script src="js/ui.js"></script>
     <script src="js/app.js"></script>
