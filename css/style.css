@@ -145,12 +145,6 @@ a.powered-credit:hover {
 
 .powered-avatar.claude {
     background: linear-gradient(135deg, #d97706, #f59e0b);
-    padding: 0;
-    overflow: hidden;
-}
-
-.claude-detective {
-    display: block;
 }
 
 .powered-sep {
@@ -171,10 +165,6 @@ a.powered-credit:hover {
         width: 18px;
         height: 18px;
         font-size: 0.5rem;
-    }
-    .claude-detective {
-        width: 18px;
-        height: 18px;
     }
 }
 

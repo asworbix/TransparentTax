@@ -19,10 +19,6 @@
             <span class="fnav-icon">S</span>
             <span class="fnav-label">Skandalerne</span>
         </a>
-        <a href="#spending-section" class="fnav-item" data-section="spending-section">
-            <span class="fnav-icon">P</span>
-            <span class="fnav-label">Pengene</span>
-        </a>
         <a href="#cta-section" class="fnav-item" data-section="cta-section">
             <span class="fnav-icon">AI</span>
             <span class="fnav-label">Handling</span>
@@ -48,7 +44,7 @@
                 </span>
                 <span class="powered-sep">&</span>
                 <span class="powered-credit">
-                    <span class="powered-avatar claude"><svg class="claude-detective" viewBox="0 0 40 40" width="22" height="22"><circle cx="20" cy="20" r="18" fill="#d97706"/><ellipse cx="14" cy="17" rx="3" ry="3.5" fill="#fff"/><ellipse cx="26" cy="17" rx="3" ry="3.5" fill="#fff"/><circle cx="14" cy="17" r="1.5" fill="#1a1d27"/><circle cx="26" cy="17" r="1.5" fill="#1a1d27"/><path d="M15 25 Q20 29 25 25" stroke="#1a1d27" stroke-width="1.5" fill="none" stroke-linecap="round"/><path d="M6 12 Q10 6 20 4 Q30 6 34 12 L32 13 Q28 8 20 6.5 Q12 8 8 13 Z" fill="#4b3621"/><ellipse cx="20" cy="5.5" rx="10" ry="2" fill="#4b3621"/><circle cx="30" cy="17" r="5" fill="none" stroke="#e8e9ed" stroke-width="1.2"/><line x1="34" y1="21" x2="38" y2="25" stroke="#e8e9ed" stroke-width="1.2" stroke-linecap="round"/></svg></span>
+                    <span class="powered-avatar claude">CC</span>
                     Claude Code
                 </span>
             </div>
@@ -112,84 +108,6 @@
             <div id="tab-savings" class="spending-tab-content">
                 <p class="tab-intro">Hvis Danmark havde brugt AI-drevne metoder, hvor mange milliarder kunne vi have sparet?</p>
                 <div id="savings-calculator" class="savings-calculator"></div>
-            </div>
-        </section>
-
-        <!-- PUBLIC SPENDING -->
-        <section id="spending-section" class="card">
-            <h2>Følg Pengene - Hvad Gør Den Offentlige Sektor Med Dem?</h2>
-            <p class="section-desc">Dine skattekroner lander i den offentlige sektor. Men hvad sker der derefter? Her er indsigt i budget vs. virkelighed, kvartalsforbrug og kendte problemer.</p>
-
-            <div class="spending-tabs">
-                <button class="spending-tab active" data-tab="budget-actual">Budget vs. Virkelighed</button>
-                <button class="spending-tab" data-tab="operational">Hvad Bruges Pengene På?</button>
-                <button class="spending-tab" data-tab="quarterly">Kvartalsforbrug</button>
-                <button class="spending-tab" data-tab="issues">Kendte Problemer</button>
-            </div>
-
-            <div id="tab-budget-actual" class="spending-tab-content active">
-                <p class="tab-intro">Hvert år vedtages Finansloven med et budget for hvert område. Statsregnskabet viser hvad der faktisk blev brugt. Forskellen afslører forsinkelser, fejlbudgettering og ubrugte midler.</p>
-                <div id="budget-actual-table" class="budget-actual-table"></div>
-                <div class="spending-insight-box">
-                    <span class="insight-icon"></span>
-                    <div>
-                        <strong>Hvad sker med ubrugte penge?</strong>
-                        <p>Statslige institutioner må overføre op til 2% af deres bevilling til næste år. Alt derudover bortfalder. Det skaber et incitament til at bruge pengene op, uanset om behovet er der.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-operational" class="spending-tab-content">
-                <p class="tab-intro">Når et ministerium modtager sin bevilling, hvor ender pengene så? Her ser du den typiske fordeling af driftsudgifter.</p>
-                <div class="op-selector">
-                    <label>Vælg sektor:</label>
-                    <select id="op-sector-select">
-                        <option value="overall">Gennemsnit (hele den offentlige sektor)</option>
-                        <option value="healthcare">Sundhedsvæsen</option>
-                        <option value="education">Uddannelse</option>
-                        <option value="administration">Offentlig administration</option>
-                        <option value="defense">Forsvar</option>
-                    </select>
-                </div>
-                <div id="operational-breakdown" class="operational-breakdown"></div>
-                <div class="spending-insight-box insight-warn">
-                    <span class="insight-icon"></span>
-                    <div>
-                        <strong>Konsulenter vs. fastansatte</strong>
-                        <p>Den offentlige sektor bruger 12-15 mia. kr. årligt på eksterne konsulenter. Det svarer til ca. 4,5% af driftsbudgettet, og konsulenthonorarer er typisk 3-5x dyrere end fastansatte for sammenlignelige opgaver.</p>
-                    </div>
-                </div>
-            </div>
-
-            <div id="tab-quarterly" class="spending-tab-content">
-                <p class="tab-intro">Pengene flyder ikke jævnt gennem året. Her ser du det typiske mønster, og det problematiske Q4-forbrug.</p>
-                <div id="quarterly-chart" class="quarterly-chart"></div>
-                <div id="quarterly-details" class="quarterly-details"></div>
-                <div class="spending-insight-box insight-warn">
-                    <span class="insight-icon"></span>
-                    <div>
-                        <strong>December-feber</strong>
-                        <p id="quarterly-insight"></p>
-                    </div>
-                </div>
-                <div class="carryover-box">
-                    <h4>Overførsel mellem år - Bevillingsreglerne</h4>
-                    <p id="carryover-text"></p>
-                    <div class="carryover-amount">
-                        <span>Estimeret årlig overførsel:</span>
-                        <strong id="carryover-amount-value"></strong>
-                    </div>
-                </div>
-                <div class="rules-box">
-                    <h4>De 4 bevillingstyper - og hvad der sker med ubrugte penge</h4>
-                    <p class="rules-intro">Ikke alle bevillinger fungerer ens. Her er de fire typer og deres regler for overførsel:</p>
-                    <div id="appropriation-rules" class="rules-grid"></div>
-                </div>
-            </div>
-
-            <div id="tab-issues" class="spending-tab-content">
-                <p class="tab-intro">Rigsrevisionen, medierne og uafhængige analyser har dokumenteret en række tilbagevendende problemer med offentligt forbrug.</p>
-                <div id="issues-list" class="issues-list"></div>
             </div>
         </section>
 
