@@ -13,36 +13,73 @@
 })();
 
 /**
- * Floating navigation - highlights active section and scrolls to section on click
+ * Floating navigation - tab switching + section scrolling
  */
 function initFloatingNav() {
-    const nav = document.getElementById('floating-nav');
-    const navItems = nav.querySelectorAll('.fnav-item');
-    const sections = document.querySelectorAll('section[id]');
+    var nav = document.getElementById('floating-nav');
+    var navItems = nav.querySelectorAll('.fnav-item');
+    var deepDiveSection = document.getElementById('it-deepdive-section');
 
-    // Scroll spy - highlight active section
-    const observer = new IntersectionObserver(function (entries) {
-        entries.forEach(function (entry) {
-            if (entry.isIntersecting) {
-                navItems.forEach(function (item) { item.classList.remove('active'); });
-                const active = nav.querySelector('[data-section="' + entry.target.id + '"]');
-                if (active) active.classList.add('active');
+    // Click handler for each nav item
+    navItems.forEach(function (item) {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            var tabId = this.dataset.tab;
+            var sectionId = this.dataset.section;
+
+            // Update active state in floating nav
+            navItems.forEach(function (n) { n.classList.remove('active'); });
+            this.classList.add('active');
+
+            // If it has a tab, switch the tab in the deep-dive section
+            if (tabId && deepDiveSection) {
+                var tabs = deepDiveSection.querySelectorAll('.spending-tab');
+                var contents = deepDiveSection.querySelectorAll('.spending-tab-content');
+
+                tabs.forEach(function (t) { t.classList.remove('active'); });
+                contents.forEach(function (c) { c.classList.remove('active'); });
+
+                // Activate matching tab button
+                var matchingTab = deepDiveSection.querySelector('.spending-tab[data-tab="' + tabId + '"]');
+                if (matchingTab) matchingTab.classList.add('active');
+
+                // Activate matching content
+                var matchingContent = deepDiveSection.querySelector('#tab-' + tabId);
+                if (matchingContent) matchingContent.classList.add('active');
+            }
+
+            // Scroll to the section
+            var targetSection = document.getElementById(sectionId);
+            if (targetSection) {
+                targetSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
-    }, { threshold: 0.15, rootMargin: '-80px 0px -40% 0px' });
+    });
 
-    sections.forEach(function (section) { observer.observe(section); });
+    // Sync floating nav when user clicks the inline tabs directly
+    if (deepDiveSection) {
+        var inlineTabs = deepDiveSection.querySelectorAll('.spending-tab');
+        inlineTabs.forEach(function (tab) {
+            tab.addEventListener('click', function () {
+                var tabId = this.dataset.tab;
+                navItems.forEach(function (n) {
+                    if (n.dataset.tab === tabId) {
+                        n.classList.add('active');
+                    } else if (n.dataset.section === 'it-deepdive-section') {
+                        n.classList.remove('active');
+                    }
+                });
+            });
+        });
+    }
 
     // Show/hide nav based on scroll
-    var lastScroll = 0;
     window.addEventListener('scroll', function () {
-        var scrollY = window.scrollY;
-        if (scrollY > 300) {
+        if (window.scrollY > 300) {
             nav.classList.add('visible');
         } else {
             nav.classList.remove('visible');
         }
-        lastScroll = scrollY;
     }, { passive: true });
 }
 
