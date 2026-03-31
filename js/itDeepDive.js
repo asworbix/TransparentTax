@@ -633,6 +633,111 @@ const IT_CASE_STUDIES = [
             },
         ],
     },
+    {
+        id: "dsb-ic4",
+        name: "DSB IC4/IC2: Danmarks dyreste togkøb",
+        icon: "",
+        org: "DSB / Transportministeriet",
+        years: "2000–2017",
+        budgetOriginal: "4,98 mia. kr. (83 IC4-tog + 23 IC2-tog)",
+        budgetFinal: "6,8 mia. kr. direkte. 16,7 mia. kr. inkl. erstatning og elektrificering.",
+        outcome: "Skrottet. IC4 skåret i stykker og solgt som skrot. IC2 solgt til Rumænien.",
+        lostValue: "DSB nedskrev IC4 med 2.731 mio. kr. i 2016. Bogført værdi: 46 mio. kr. (fra 5 mia.).",
+        severity: "catastrophic",
+        vendors: "AnsaldoBreda (Italien) - valgt som billigste tilbudsgiver over teknisk bedre alternativer",
+        timeline: [
+            { year: "2000", event: "DSB bestiller 83 IC4-tog fra italienske AnsaldoBreda for 4,98 mia. kr. Billigste tilbud vinder over teknisk bedre alternativer." },
+            { year: "2002", event: "Supplerende ordre: 23 IC2-tog for 800 mio. kr." },
+            { year: "2003", event: "Togene skulle have været i drift. De er det ikke." },
+            { year: "2007", event: "Første tog leveret - 4 år for sent. Kritiske fejl i bremser, motorer, døre, toiletter, ventilation, varme og computere." },
+            { year: "2009", event: "Forlig med AnsaldoBreda: 2,25 mia. kr. i prisreduktion. DSB overtager selv færdiggørelsen - bliver både kunde og producent." },
+            { year: "2012", event: "Total: 6,2 mia. kr. inkl. 1,1 mia. for lejede erstatningstog. Statsrevisorerne: 'ikke tilfredsstillende'." },
+            { year: "2014", event: "Regning når 6,8 mia. kr. - 1,5 mia. over kontrakt." },
+            { year: "2016", event: "DSB nedskriver IC4 med 2.731 mio. kr. Bogført værdi: kun 46 mio. kr. DSB poster tab på 2.193 mio. kr. Alle IC2 trukket ud af drift." },
+            { year: "2017", event: "Første IC4-tog fysisk skrottet. Ingeniøren: fuld erstatningsregning er 16,7 mia. kr. DSB forsøgte at ændre Rigsrevisionens kritiske ordlyd før offentliggørelse." },
+        ],
+        rootCauses: [
+            {
+                cause: "Billigste tilbud vinder altid",
+                detail: "DSB valgte det billigste tilbud over teknisk bedre alternativer. Kontrakten manglede effektive bodsklausuler, milestone-betalinger og exit-mekanismer."
+            },
+            {
+                cause: "DSB blev producent",
+                detail: "Efter forliget overtog DSB selv færdiggørelsen af togene. En togoperatør blev pludselig togproducent. Uden kompetencerne til det."
+            },
+            {
+                cause: "Fra 5 mia. til 46 mio. i bogført værdi",
+                detail: "Tog købt for 5 mia. kr. nedskrevet til 46 mio. kr. og skrottet. Det er 99,1% værditab. Og skatteyderne betalte."
+            },
+        ],
+    },
+    {
+        id: "dsb-kontrakt",
+        name: "DSB Trafikkontrakten: 0 kr. i straf for 7 brud på 8 år",
+        icon: "",
+        org: "DSB / Transportministeriet",
+        years: "2015–nu",
+        budgetOriginal: "41,4 mia. kr. (2015-2024, ~4,2 mia./år)",
+        budgetFinal: "3,3 mia. kr./år (ny kontrakt 2023-2033)",
+        outcome: "DSB brød kontrakten 7 af 8 år. Betalte 0 kr. i kompensation til staten.",
+        lostValue: "Passagerer har historisk lav punktlighed. Direktører modtager millionbonusser. Fyret CEO gik med 9,7 mio. kr.",
+        severity: "critical",
+        vendors: "DSB (statsligt monopol - ingen konkurrence)",
+        contractNote: "TV 2 dokumenterede i juni 2023: DSB brød kontrakten 7 ud af 8 år (2015-2023). Transportministeriet bekræftede at DSB IKKE betaler kompensation til staten.",
+        timeline: [
+            { year: "2015", event: "Ny trafikkontrakt: staten betaler DSB ~4,2 mia. kr./år. Punktlighedskrav stiger til 88% inden 2023." },
+            { year: "2016-2022", event: "DSB bryder kontrakten 7 ud af 8 år. Ingen finansielle konsekvenser. Kun 2020 (COVID, reduceret trafik) opfylder kravene." },
+            { year: "2023", event: "Punktlighed rammer historisk lavpunkt. TV 2: 'For syvende gang bryder DSB sin kontrakt med staten'. Ministeriet bekræfter: 0 kr. i kompensation." },
+            { year: "2024", event: "Punktlighed: 76,8%. Netop over det nye, dramatisk sænkede mål på 75%. Originalt mål var 88%." },
+        ],
+        rootCauses: [
+            {
+                cause: "Ingen straf for kontraktbrud",
+                detail: "DSB brød kontrakten 7 af 8 år og betalte 0 kr. i kompensation. Passagerer kan få kompensation på specifikke ruter, men STATEN som ejer får intet tilbage."
+            },
+            {
+                cause: "Målene sænkes i stedet for at straffe",
+                detail: "I stedet for at holde DSB ansvarlig sænkede ministeriet punktlighedskravet fra 88% til 75%. Problemet løses ved at omdefinere succes."
+            },
+            {
+                cause: "Monopol uden konsekvenser",
+                detail: "Arriva viste at konkurrence giver 30% besparelse. Men DSB fik direkte tildeling uden konkurrence. Den nye 2023-kontrakt er officielt den sidste uden udbud."
+            },
+        ],
+    },
+    {
+        id: "dsb-bonus",
+        name: "DSB Bonusser og Ledelsessvigt",
+        icon: "",
+        org: "DSB",
+        years: "2011–2024",
+        budgetOriginal: "N/A",
+        budgetFinal: "N/A",
+        outcome: "Millionbonusser til ledere mens passagerer oplever forsinkelser og aflysninger.",
+        lostValue: "Fyret CEO Søren Eriksen: 9,7 mio. kr. i fratrædelse. DSB First-oprydning: 725 mio. kr. Direktør-bonus: 3,3 mio. kr. for at blive i jobbet.",
+        severity: "critical",
+        vendors: "N/A",
+        timeline: [
+            { year: "2011", event: "CEO Søren Eriksen fyret pga. finansielt kaos i DSB First (svensk datterselskab). Går med 9,7 mio. kr. DSB afsætter 725 mio. kr. til oprydning. Rigsrevisionen: mistanke om at danske skattepenge subsidierte svensk togdrift." },
+            { year: "2016-2017", event: "CEO Flemming Jensen: bonus op til 25% af grundløn. I 2017: 812.953 kr. i bonus. Samlet kompensation: 6,1 mio. kr. - mere end dobbelt så meget som statsministerens løn (2,7 mio.)." },
+            { year: "2018-2024", event: "Strategidirektør Jürgen Müller: fastholdelsesbonus på 3,3 mio. kr. bare for IKKE at sige op. Intet andet statsligt selskab bruger sådanne bonusser. Professor: 'skjult lønforhøjelse' og 'uskik'." },
+            { year: "2020", event: "Performancebonusser omdannes til fast løn (faktor 53). Bonussystemet forsvinder, men lønnen stiger tilsvarende." },
+        ],
+        rootCauses: [
+            {
+                cause: "Belønning uden ansvar",
+                detail: "Ledere modtager millionbonusser mens passagerer oplever historisk lav punktlighed og kontrakten brydes år efter år."
+            },
+            {
+                cause: "3,3 mio. kr. for at blive",
+                detail: "En direktør fik 3,3 mio. kr. i bonus bare for ikke at sige op. Ingen andre statslige selskaber bruger fastholdelsesbonus."
+            },
+            {
+                cause: "Fyret med millioner",
+                detail: "CEO Eriksen forlod DSB med 9,7 mio. kr. efter en skandale der kostede 725 mio. kr. at rydde op efter."
+            },
+        ],
+    },
 ];
 
 /**
@@ -645,7 +750,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Megaprojekt-fælden",
         description: "Store monolitiske systemer der skal løse alt på én gang. Ingen trinvis levering, ingen feedback loops.",
-        frequency: "Alle 17 sager",
+        frequency: "Alle 20 sager",
         color: "#ef4444"
     },
     {
@@ -653,7 +758,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Kravspecifikation i blinde",
         description: "Organisationer kender ikke deres egne processer. Krav skrives af konsulenter der ikke forstår domænet.",
-        frequency: "Alle 17 sager",
+        frequency: "Alle 20 sager",
         color: "#f97316"
     },
     {
@@ -661,7 +766,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Udbudsregler tvinger vandfald",
         description: "EU-udbudsregler behandler IT som byggeri. Lineær proces med fastlåst scope, men software kræver iteration.",
-        frequency: "13 af 17 sager",
+        frequency: "16 af 20 sager",
         color: "#eab308"
     },
     {
@@ -677,7 +782,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Besparelser før systemet virker",
         description: "Medarbejdere fyres og gamle systemer nedlægges FØR det nye system er testet og i drift. Ingen plan B.",
-        frequency: "10 af 17 sager",
+        frequency: "12 af 20 sager",
         color: "#ec4899"
     },
     {
@@ -685,7 +790,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Leverandør-optimisme",
         description: "'Den der vinder er den der lyver.' Leverandører underbudgetterer for at vinde, vel vidende at scope vil vokse.",
-        frequency: "13 af 17 sager",
+        frequency: "16 af 20 sager",
         color: "#06b6d4"
     },
     {
@@ -693,7 +798,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Ingen tidlig brugertest",
         description: "Systemer bygges i årevis uden at rigtige brugere tester dem. Problemer opdages først ved go-live.",
-        frequency: "Alle 17 sager",
+        frequency: "Alle 20 sager",
         color: "#22c55e"
     },
     {
@@ -701,7 +806,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Manglende gennemsigtighed",
         description: "Dokumenter holdes fortrolige. Fejl skjules. Ingen offentlig ansvarlighed eller læring.",
-        frequency: "10 af 17 sager",
+        frequency: "12 af 20 sager",
         color: "#94a3b8"
     },
 ];
@@ -807,7 +912,7 @@ const MODERN_SOLUTIONS = [
  * Summary statistics for the "what could have been saved" calculation
  */
 const IT_WASTE_SUMMARY = {
-    totalWastedBn: 60,           // Conservative estimate: 60+ mia. kr. wasted on failed/overrun IT and infrastructure over 30 years (17 documented cases)
+    totalWastedBn: 80,           // Conservative estimate: 80+ mia. kr. wasted on failed IT, infrastructure and transport over 30 years (20 documented cases, incl. IC4 16.7 mia.)
     annualConsultantBn: 13.5,    // 12-15 mia. kr./year on consultants
     avgOverrunPct: 108,          // Danish average
     norwayOverrunPct: 8,         // Norway comparison
@@ -974,5 +1079,82 @@ const CONSULTANT_DATA = {
             gdprFine: "Indstillet til rekordbot på 15 mio. kr. (GDPR) for sikkerhedssvigt i Digital Post (mit.dk).",
             monopolWarning: "Professor Jan Pries Heje kalder det 'et nyt monopol'. Dobbelt så stor som nr. 2.",
         },
+    },
+};
+
+/**
+ * Netcompany Deep-Dive: Why one company controls Denmark's digital infrastructure
+ * Sources: Version2, Ingeniøren, DR, Datatilsynet, Prosabladet, Information, Kristeligt Dagblad
+ */
+const NETCOMPANY_DEEP_DIVE = {
+    overview: {
+        revenue2024: "6,5 mia. kr.",
+        revenueGrowth: "7,6%",
+        publicSectorGrowthQ1_2025: "13,5%",
+        stateProjectShare: "~33% af statens IT-projekter (34 af 104)",
+        stateSystemShare: "~15% af statens IT-systemer (111 af 723)",
+        danmarkShareOfRevenue: "Over 50%",
+        employees: "7.000+",
+        founded: "2000 af André Rogaczewski og Bo Lynge Sørensen",
+    },
+
+    whyTheyKeepWinning: [
+        {
+            reason: "Størrelse som selvforstærkende fordel",
+            detail: "Netcompany er dobbelt så stor som nr. 2 på statens IT-marked. Udbud kræver dokumenteret erfaring med lignende projekter, og Netcompany har flest referencer."
+        },
+        {
+            reason: "Bredde skaber afhængighed",
+            detail: "Netcompany leverer MitID, Digital Post (mit.dk), borger.dk, NemLog-in, NemKonto, Aula, PSRM og mange flere. Hvert nyt system gør det sværere at skifte."
+        },
+        {
+            reason: "Udbudsregler favoriserer de store",
+            detail: "Kriterier der vægter global omsætning og referenceprojekter udelukker effektivt mindre, specialiserede firmaer."
+        },
+        {
+            reason: "Revolving door",
+            detail: "Medarbejdere skifter mellem ministerier og Netcompany. Kendskab til interne processer giver fordel i udbud."
+        },
+    ],
+
+    documentedFailures: [
+        { project: "MitID/mit.dk", issue: "GDPR-bot 15 mio. kr. Borgere kunne logge ind på andres konti. 18.000 brugernavne lækket." },
+        { project: "Aula", issue: "Pris 'løber løbsk'. Børns data eksponeret. KOMBIT overvejer leverandørskift men er låst." },
+        { project: "PSRM (gældsinddrivelse)", issue: "Teknologien allerede forældet. Leverandøren stoppet sikkerhedsopdateringer." },
+        { project: "Smittestop-appen", issue: "35+ mio. kr. for app der ikke virkede. Lukket kildekode." },
+        { project: "Våbenregistret (PAC)", issue: "System 'praktisk talt kollapset'. 17.000+ jægere uden våbentilladelser." },
+        { project: "Rejsekort-app", issue: "Pauset pga. fejl. Anonymiserede ikke lokationsdata. Kontrakt annulleret af Klagenævnet." },
+    ],
+
+    securityIncidents: {
+        datatyveri2024: {
+            title: "Datatyveri 2024: Kildekode og passwords stjålet",
+            detail: "Hackergruppen Zyndicate lækkede kildekode, scripts og passwords fra Netcompany. Truede med at frigive data fra Skattestyrelsen. En 34-årig mand (tidligere ansat i Udviklings- og Forenklingsstyrelsen) anholdt og tiltalt. Sad fængslet 193 dage.",
+            expertQuote: "Professor Hanne Marie Motzfeldt: 'Myndigheder må genoverveje deres tillid til Netcompany som databehandler.'"
+        },
+        gdprBot: {
+            title: "GDPR-rekordbøde: 15 mio. kr.",
+            detail: "Datatilsynet indstillede Netcompany til 15 mio. kr. i bøde for utilstrækkelig sikkerhed i Digital Post (mit.dk). Største GDPR-bøde i dansk historie."
+        },
+    },
+
+    corporateStructure: {
+        jersey: "Netcompanys ejere har historisk brugt selskabskonstruktioner via Jersey (britisk kanaløen). Sjællandske Nyheder: 'De største offentlige IT-leverandører skjuler sig i skattely'. Enhedslisten og Socialdemokratiet stillede spørgsmål til skatteministeren.",
+        rogaczewskiQuote: "André Rogaczewski: 'Netcompany bør ikke betragtes som en dansk virksomhed, men som en europæisk virksomhed med danske rødder.'",
+        boersnoteret: "Børsnoteret i Danmark siden 2018.",
+    },
+
+    workCulture: {
+        imageRank: "Sidsteplads (#60 af 60) i Ingeniørens undersøgelse af danske IT-virksomheders image (2025). Faldet fra #35 (2023) til #53 (2024) til #60.",
+        turnover2023: "19% medarbejderomsætning (2023). Steget til 21,7% i Q3 2024. ~400 medarbejdere forlader om året.",
+        idaSager: "IDA (Ingeniørforeningen) har behandlet over 100 opsigelsessager fra Netcompany de seneste år.",
+        prosaWarning: "PROSAs næstformand Curt Kjærsgaard Raavig: 'Tænk dig om før du takker ja til job i Netcompany. For mange bliver slidt op. I 20erne!'",
+        netcompanyResponse: "André Rogaczewski: 16-20% medarbejderomsætning er 'meget normalt'. Netcompany afviser at stille op til interview om undersøgelsen.",
+    },
+
+    systemicRisk: "Netcompany kontrollerer MitID, Digital Post, borger.dk, NemLog-in, NemKonto, Aula og ~33% af statens IT-projekter. Hvis Netcompany fejler, fejler Danmarks digitale infrastruktur. Professor Jan Pries Heje: 'Et nyt monopol.' Præcis det der skete med KMD.",
+
+    dsbComparison: {
+        analogy: "Netcompany er IT-verdenens DSB: statsligt monopol, ingen reel konkurrence, kontrakterne brydes uden konsekvenser, og alternativerne er systematisk udelukket.",
     },
 };

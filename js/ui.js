@@ -571,10 +571,129 @@ function renderConsultantBreakdown() {
     container.innerHTML = html;
 }
 
+function renderNetcompanyDeepDive() {
+    const container = document.getElementById('netcompany-deepdive');
+    if (!container || typeof NETCOMPANY_DEEP_DIVE === 'undefined') return;
+
+    const n = NETCOMPANY_DEEP_DIVE;
+
+    let html = `
+        <div class="kh-stats-grid">
+            <div class="kh-stat-card kh-stat-primary">
+                <div class="kh-stat-value">${n.overview.revenue2024}</div>
+                <div class="kh-stat-label">Omsætning 2024</div>
+                <div class="kh-stat-note">Offentlig sektor vokser ${n.overview.publicSectorGrowthQ1_2025} (Q1 2025)</div>
+            </div>
+            <div class="kh-stat-card kh-stat-cost">
+                <div class="kh-stat-value">~33%</div>
+                <div class="kh-stat-label">Af statens IT-projekter</div>
+                <div class="kh-stat-note">34 af 104 projekter, 111 af 723 systemer</div>
+            </div>
+            <div class="kh-stat-card">
+                <div class="kh-stat-value">#60 af 60</div>
+                <div class="kh-stat-label">Image blandt IT-folk</div>
+                <div class="kh-stat-note">Absolut bundplacering (Ingeniøren 2025)</div>
+            </div>
+            <div class="kh-stat-card kh-stat-cost">
+                <div class="kh-stat-value">21,7%</div>
+                <div class="kh-stat-label">Medarbejderomsætning</div>
+                <div class="kh-stat-note">~400 forlader om året. IDA: 100+ opsigelsessager</div>
+            </div>
+        </div>
+
+        <h3 class="kh-sub-heading">Hvorfor vinder Netcompany altid?</h3>
+        <div class="scandal-consultant-list">
+            ${n.whyTheyKeepWinning.map(w => `
+                <div class="scandal-consultant-card">
+                    <div class="scandal-consultant-header">
+                        <h4>${w.reason}</h4>
+                    </div>
+                    <div class="scandal-details">
+                        <p>${w.detail}</p>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+
+        <h3 class="kh-sub-heading">Dokumenterede fejl og problemer</h3>
+        <div class="consultant-list">
+            ${n.documentedFailures.map(f => `
+                <div class="consultant-card consultant-flagged">
+                    <div class="consultant-header">
+                        <div class="consultant-info">
+                            <h4>${f.project}</h4>
+                        </div>
+                    </div>
+                    <p class="consultant-controversy">${f.issue}</p>
+                </div>
+            `).join('')}
+        </div>
+
+        <h3 class="kh-sub-heading">Sikkerhedssvigt</h3>
+        <div class="scandal-consultant-list">
+            <div class="scandal-consultant-card">
+                <div class="scandal-consultant-header">
+                    <h4>${n.securityIncidents.datatyveri2024.title}</h4>
+                </div>
+                <div class="scandal-details">
+                    <p>${n.securityIncidents.datatyveri2024.detail}</p>
+                    <p class="consultant-controversy">${n.securityIncidents.datatyveri2024.expertQuote}</p>
+                </div>
+            </div>
+            <div class="scandal-consultant-card">
+                <div class="scandal-consultant-header">
+                    <h4>${n.securityIncidents.gdprBot.title}</h4>
+                </div>
+                <div class="scandal-details">
+                    <p>${n.securityIncidents.gdprBot.detail}</p>
+                </div>
+            </div>
+        </div>
+
+        <h3 class="kh-sub-heading">Selskabsstruktur og skattely</h3>
+        <div class="spending-insight-box insight-warn">
+            <span class="insight-icon"></span>
+            <div>
+                <p>${n.corporateStructure.jersey}</p>
+                <p class="consultant-controversy">${n.corporateStructure.rogaczewskiQuote}</p>
+            </div>
+        </div>
+
+        <h3 class="kh-sub-heading">Arbejdskultur</h3>
+        <div class="kh-stats-grid">
+            <div class="kh-stat-card kh-stat-cost">
+                <div class="kh-stat-value">${n.workCulture.imageRank.split(' ')[0]}</div>
+                <div class="kh-stat-label">Sidsteplads i imageundersøgelse</div>
+                <div class="kh-stat-note">Faldet fra #35 (2023) til #60 (2025)</div>
+            </div>
+        </div>
+        <div class="scandal-consultant-list">
+            <div class="scandal-consultant-card">
+                <div class="scandal-details">
+                    <p><strong>IDA:</strong> ${n.workCulture.idaSager}</p>
+                    <p class="consultant-controversy"><strong>PROSA:</strong> ${n.workCulture.prosaWarning}</p>
+                    <p><strong>Netcompany:</strong> ${n.workCulture.netcompanyResponse}</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="spending-insight-box insight-warn">
+            <span class="insight-icon"></span>
+            <div>
+                <strong>Den systemiske risiko</strong>
+                <p>${n.systemicRisk}</p>
+            </div>
+        </div>
+    `;
+
+    container.innerHTML = html;
+}
+
 function renderITDeepDive() {
     initDeepDiveTabs();
     renderCaseStudies();
     renderConsultantBreakdown();
+    renderNetcompanyDeepDive();
     renderRootCauses();
     renderSolutions();
     renderSavingsCalculator();
