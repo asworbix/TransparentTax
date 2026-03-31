@@ -738,6 +738,409 @@ const IT_CASE_STUDIES = [
             },
         ],
     },
+    {
+        id: "odense-letbane",
+        name: "Odense Letbane",
+        icon: "",
+        org: "Odense Kommune / Odense Letbane P/S",
+        years: "2015–2022",
+        budgetOriginal: "3,0 mia. kr.",
+        budgetFinal: "3,6 mia. kr.",
+        outcome: "I drift, men 42% færre passagerer end forventet og 147 mio. kr./år i underskud.",
+        lostValue: "14.500 daglige passagerer vs. 25.000 forventet. Årligt underskud dækkes af skatteyderne.",
+        severity: "critical",
+        vendors: "Comsa (Spanien, anlæg), Stadler (Schweiz, tog)",
+        timeline: [
+            { year: "2015", event: "Anlægslov vedtaget. Budget: 3,0 mia. kr. Forventet 25.000 daglige passagerer." },
+            { year: "2018-2020", event: "Anlæg forsinket. Budgetoverskridelser begynder. Odense centrum gravet op i årevis." },
+            { year: "2022", event: "Åbner efter forsinkelser. Budget vokset til 3,6 mia. kr. (+20%)." },
+            { year: "2023", event: "Kun 14.500 daglige passagerer - 42% under prognosen. Årligt underskud: 147 mio. kr." },
+            { year: "2024-2025", event: "Underskuddet fortsætter. Kommunen må dække tabet. Kritikere spørger om letbanen nogensinde bliver rentabel." },
+        ],
+        rootCauses: [
+            {
+                cause: "Overoptimistiske passagerprognoser",
+                detail: "25.000 daglige passagerer forventet, 14.500 realiseret. 42% under prognosen. Samme mønster som Aarhus Letbane."
+            },
+            {
+                cause: "Ingen konsekvens ved forkerte prognoser",
+                detail: "De konsulenter der lavede de optimistiske prognoser bærer intet ansvar. Skatteyderne dækker underskuddet."
+            },
+            {
+                cause: "Årelang gene for borgerne",
+                detail: "Odense centrum var en byggeplads i årevis. Butikker lukkede. Borgerne betalte prisen både under og efter anlæg."
+            },
+        ],
+    },
+    {
+        id: "femern",
+        name: "Femern Bælt-forbindelsen",
+        icon: "",
+        org: "Femern A/S / Transportministeriet",
+        years: "2008–2031?",
+        budgetOriginal: "52,6 mia. kr.",
+        budgetFinal: "64-92 mia. kr. (inkl. tyske tilslutningsanlæg)",
+        outcome: "Under anlæg. 13 mia. kr. brugt før tysk godkendelse. Åbning udskudt til 2031+.",
+        lostValue: "Milliardoverskridelser. Risiko for at danske skatteydere hænger på regningen hvis brugerbetaling ikke dækker.",
+        severity: "catastrophic",
+        vendors: "Femern Link Contractors (Vinci, Per Aarsleff m.fl.)",
+        timeline: [
+            { year: "2008", event: "Statsaftale mellem Danmark og Tyskland. Danmark betaler tunnelen, Tyskland landanlæg." },
+            { year: "2015", event: "Anlægslov vedtaget i Danmark. Budget: 52,6 mia. kr. Tysk godkendelse mangler stadig." },
+            { year: "2019", event: "13 mia. kr. allerede brugt - FØR tysk planfæstelse er på plads. Point of no return." },
+            { year: "2020", event: "Tysk planfæstelse endelig godkendt efter 8 års forsinkelse og modstand fra tyske borgere og færgeselskaber." },
+            { year: "2024", event: "Budgettet stiger. Samlede omkostninger inkl. tyske tilslutningsanlæg: 64-92 mia. kr. Renteudgifter eksploderer." },
+            { year: "2031?", event: "Forventet åbning. Tilbagebetalingstid: 36 år. Kritikere tvivler på om brugerbetaling dækker." },
+        ],
+        rootCauses: [
+            {
+                cause: "13 mia. brugt før godkendelse",
+                detail: "Danmark brugte 13 mia. kr. før Tyskland overhovedet havde godkendt projektet. Et gigantisk væddemål med skatteydernes penge."
+            },
+            {
+                cause: "Urealistisk finansieringsmodel",
+                detail: "Præsenteret som 'selvfinansierende' via brugerbetaling. Men renteudgifter og budgetoverskridelser truer modellen. Tilbagebetalingstid: 36 år."
+            },
+            {
+                cause: "Ingen plan B",
+                detail: "Når 13 mia. er brugt, kan man ikke stoppe. Præcis samme fælde som EFI: invester så meget at projektet bliver 'too big to fail'."
+            },
+        ],
+    },
+    {
+        id: "cityringen",
+        name: "Cityringen (Metro M3)",
+        icon: "",
+        org: "Metroselskabet / Københavns Kommune",
+        years: "2007–2019",
+        budgetOriginal: "21,3 mia. kr.",
+        budgetFinal: "~25 mia. kr.",
+        outcome: "I drift. 9 mdr. forsinket. 36% færre passagerer end forventet.",
+        lostValue: "150.000 daglige passagerer vs. 235.000 forventet. Støj og byggegener i 10 år for københavnere.",
+        severity: "critical",
+        vendors: "Copenhagen Metro Team (Salini Impregilo/Webuild, Seli, Ansaldo STS)",
+        timeline: [
+            { year: "2007", event: "Cityringen vedtaget. Budget: 21,3 mia. kr. Forventet 235.000 daglige passagerer." },
+            { year: "2010-2018", event: "Anlæg. København gravet op i næsten et årti. Massive støjgener, grundvandsproblemer, byggerod." },
+            { year: "2019", event: "Åbner 9 måneder forsinket. Budget vokset til ~25 mia. kr." },
+            { year: "2023", event: "150.000 daglige passagerer - 36% under prognosen. Gælden skal betales over 40+ år." },
+        ],
+        rootCauses: [
+            {
+                cause: "Overoptimistiske passagerprognoser",
+                detail: "235.000 forventet, 150.000 realiseret. 36% under. Samme mønster som letbanerne."
+            },
+            {
+                cause: "10 års byggekaos",
+                detail: "København var en byggeplads i næsten et årti. Beboere udsat for støj, rystelser og grundvandsproblemer."
+            },
+            {
+                cause: "Gæld i 40+ år",
+                detail: "Med færre passagerer end forventet tager tilbagebetalingen længere. Københavnerne betaler i årtier."
+            },
+        ],
+    },
+    {
+        id: "aarhus-letbane",
+        name: "Aarhus Letbane",
+        icon: "",
+        org: "Aarhus Letbane I/S / Aarhus Kommune / Region Midtjylland",
+        years: "2013–2019",
+        budgetOriginal: "3,5 mia. kr.",
+        budgetFinal: "4,2 mia. kr. + 330 mio. kr. statslig redningspakke",
+        outcome: "I drift efter kaotisk åbning. Åbningsceremoni aflyst dagen før. 48% færre passagerer end forventet.",
+        lostValue: "4,7 mio. passagerer/år vs. 9 mio. forventet. Staten måtte redde projektet med 330 mio. kr.",
+        severity: "critical",
+        vendors: "Stadler (tog), Anlun/Aarsleff (anlæg)",
+        timeline: [
+            { year: "2013", event: "Anlægslov vedtaget. Budget: 3,5 mia. kr. Forventet 9 mio. passagerer/år." },
+            { year: "2017", event: "Åbningsceremoni aflyst dagen før pga. manglende sikkerhedsgodkendelse. National pinlighed." },
+            { year: "2018", event: "Endelig delvis åbning efter gentagne forsinkelser. Budget vokset til 4,2 mia. kr." },
+            { year: "2019", event: "Fuld drift. Men passagertallene er langt under forventning." },
+            { year: "2023", event: "4,7 mio. passagerer/år - 48% under prognosen. Staten bevilger 330 mio. kr. redningspakke." },
+        ],
+        rootCauses: [
+            {
+                cause: "Aflyst åbning - national skandale",
+                detail: "Åbningsceremonien aflyst dagen før fordi togene ikke var sikkerhedsgodkendt. Symbolet på dansk infrastrukturplanlægning."
+            },
+            {
+                cause: "Passagerprognoser som ønsketænkning",
+                detail: "9 mio. forventet, 4,7 mio. realiseret. 48% under. Sammen med Odense og Cityringen: et mønster af systematisk overvurdering."
+            },
+            {
+                cause: "Staten betaler når det fejler",
+                detail: "330 mio. kr. statslig redningspakke. Risikoen ligger hos skatteyderne, aldrig hos dem der lavede de forkerte prognoser."
+            },
+        ],
+    },
+    {
+        id: "postnord",
+        name: "PostNord Danmark",
+        icon: "",
+        org: "PostNord / Transportministeriet",
+        years: "2009–2025",
+        budgetOriginal: "N/A",
+        budgetFinal: "1,4 mia. kr. redningspakke + 600 mio. kr. kompensation",
+        outcome: "3.500-4.000 afskediget. Stoppede al brevomdeling 2025. Milliarder i offentlige midler.",
+        lostValue: "2+ mia. kr. i offentlige redningspakker. Tusindvis af arbejdspladser tabt. Post hver anden dag, derefter slet ikke.",
+        severity: "critical",
+        vendors: "N/A (statsligt selskab, fællesejet med Sverige)",
+        timeline: [
+            { year: "2009", event: "Post Danmark fusionerer med svenske Posten AB til PostNord. Dansk brevvolumen falder dramatisk." },
+            { year: "2017", event: "PostNord i dyb krise. Milliarder i underskud. Dansk-svensk strid om hvem der betaler." },
+            { year: "2018", event: "Redningspakke: 1,4 mia. kr. fra den danske stat. 3.500-4.000 medarbejdere afskediges." },
+            { year: "2020", event: "Staten betaler yderligere 600 mio. kr. i kompensation for befordringspligten." },
+            { year: "2025", event: "PostNord stopper al brevomdeling i Danmark. Befordringspligten ophæves efter 400+ år." },
+        ],
+        rootCauses: [
+            {
+                cause: "Fusion der aldrig virkede",
+                detail: "Den dansk-svenske fusion skabte bureaukrati og konflikter. To lande, to kulturer, to postvæsener der aldrig blev ét."
+            },
+            {
+                cause: "Skatteyderne betaler for ledelsens fejl",
+                detail: "2+ mia. kr. i offentlige redningspakker. Ledelsen kunne ikke tilpasse sig den digitale virkelighed."
+            },
+            {
+                cause: "Ingen plan for digitaliseringen",
+                detail: "Brevmængden faldt forudsigeligt i årevis. Alligevel blev tilpasningen kaotisk og dyr."
+            },
+        ],
+    },
+    {
+        id: "kronos2",
+        name: "Kronos2: Nationalbankens betalingssystem",
+        icon: "",
+        org: "Danmarks Nationalbank",
+        years: "2013–2024",
+        budgetOriginal: "~200 mio. kr.",
+        budgetFinal: "370 mio. kr. (85% over) - derefter skrottet helt",
+        outcome: "Skrottet. Fejl strandede lønudbetalinger for tusindvis af danskere.",
+        lostValue: "370 mio. kr. tabt. Borgere ventede på løn og pensioner. Tilliden til betalingsinfrastrukturen ramt.",
+        severity: "critical",
+        vendors: "Ikke offentligt navngivet",
+        timeline: [
+            { year: "2013", event: "Kronos2 startes som afløser for Nationalbankens Kronos-system. Budget: ~200 mio. kr." },
+            { year: "2018-2022", event: "Gentagne forsinkelser og tekniske problemer. Budget vokser til 370 mio. kr. (+85%)." },
+            { year: "2023", event: "Systemfejl strander lønudbetalinger for tusindvis af danskere. Pensioner forsinket. National kritik." },
+            { year: "2024", event: "Nationalbanken opgiver Kronos2 og skrottet systemet. 370 mio. kr. tabt." },
+        ],
+        rootCauses: [
+            {
+                cause: "Kritisk infrastruktur fejler",
+                detail: "Når betalingssystemet fejler, får folk ikke deres løn. Det rammer direkte i borgernes hverdag."
+            },
+            {
+                cause: "Skrottet efter 85% overskridelse",
+                detail: "Fra 200 til 370 mio. kr., og så skrottet helt. Pengene er tabt."
+            },
+            {
+                cause: "Selv Nationalbanken kan fejle",
+                detail: "Hvis Danmarks mest kompetente finansielle institution ikke kan styre et IT-projekt, hvad siger det om resten af staten?"
+            },
+        ],
+    },
+    {
+        id: "skat-moms",
+        name: "SKATs Momssystem",
+        icon: "",
+        org: "Skatteministeriet / Udviklings- og Forenklingsstyrelsen",
+        years: "2017–nu",
+        budgetOriginal: "~247 mio. kr.",
+        budgetFinal: "600+ mio. kr. (146% over)",
+        outcome: "Forsinket. Hård EU-deadline. Del af mønster hvor statens IT-budget fordobledes 2020-2021.",
+        lostValue: "353+ mio. kr. i overskridelse. Risiko for EU-sanktioner hvis deadline misses.",
+        severity: "critical",
+        vendors: "Ikke offentligt navngivet",
+        timeline: [
+            { year: "2017", event: "Nyt momssystem påbegyndes. Budget: ~247 mio. kr. EU stiller krav om modernisering." },
+            { year: "2020-2021", event: "Statens samlede IT-budget fordobles. Momssystemet er en af synderne." },
+            { year: "2023", event: "Budget vokset til 600+ mio. kr. - 146% over. Hård EU-deadline presser ministeriet." },
+            { year: "2025", event: "Stadig ikke fuldt implementeret. EU-deadline truer med sanktioner." },
+        ],
+        rootCauses: [
+            {
+                cause: "146% budgetoverskridelse",
+                detail: "Fra 247 til 600+ mio. kr. Del af et mønster: statens IT-budget fordobledes fra 2020 til 2021."
+            },
+            {
+                cause: "EU-deadline som prispres",
+                detail: "Hårde EU-krav gør det umuligt at stoppe eller forsinke yderligere. Leverandørerne ved det - og prisen stiger."
+            },
+            {
+                cause: "Skatteministeriets serielle IT-fiaskoer",
+                detail: "EFI, PSRM, ejendomsvurdering, legacy-systemer, og nu momssystemet. Samme ministerium, samme mønster, igen og igen."
+            },
+        ],
+    },
+    {
+        id: "boligskattesystem",
+        name: "Boligskattesystemet",
+        icon: "",
+        org: "Skatteministeriet / Udviklings- og Forenklingsstyrelsen (UFST)",
+        years: "2019–nu",
+        budgetOriginal: "~1,3 mia. kr.",
+        budgetFinal: "1,5+ mia. kr. (+ 5 mia. for vurderingssystemet)",
+        outcome: "Rødt lys fra IT-rådet. UFST nægter at oplyse detaljerede udgifter.",
+        lostValue: "Boligejere betaler forkert skat i årevis. Systemet hænger sammen med det 5+ mia. kr. dyre vurderingssystem.",
+        severity: "critical",
+        vendors: "Ikke offentligt navngivet",
+        timeline: [
+            { year: "2019", event: "Boligskattesystemet påbegyndes som separat projekt fra ejendomsvurderingssystemet. Budget: ~1,3 mia. kr." },
+            { year: "2021", event: "Statens IT-råd giver projektet rødt lys. Kritisk forsinkelse." },
+            { year: "2023", event: "Budget vokset til 1,5+ mia. kr. UFST nægter at oplyse detaljerede udgifter trods aktindsigt." },
+            { year: "2025", event: "Sammen med vurderingssystemet (5+ mia.) har Skatteministeriet brugt 6,5+ mia. kr. på ejendomsrelateret IT uden fuldt fungerende resultat." },
+        ],
+        rootCauses: [
+            {
+                cause: "Hemmelighedskræmmeri",
+                detail: "UFST nægter at oplyse detaljerede udgifter. Borgerne betaler men må ikke vide hvad pengene bruges til."
+            },
+            {
+                cause: "Sammenhæng med vurderingsskandale",
+                detail: "Boligskattesystemet er afhængigt af ejendomsvurderingssystemet (5+ mia. kr., 2.500% over budget). Fejl i det ene forplanter sig til det andet."
+            },
+            {
+                cause: "IT-rådet ignoreres igen",
+                detail: "Rødt lys fra Statens IT-råd. Men projektet fortsætter alligevel. Præcis som med ejendomsvurderingssystemet."
+            },
+        ],
+    },
+    {
+        id: "atea-korruption",
+        name: "Atea-sagen: Korruption i offentlige IT-indkøb",
+        icon: "",
+        org: "Region Sjælland / Rigspolitiet / Anklagemyndigheden",
+        years: "2007–2019",
+        budgetOriginal: "N/A",
+        budgetFinal: "693 mio. kr. i IT-køb fra Atea",
+        outcome: "45 mio. kr. kanaliseret til hemmelig 'Konto 2840'. Luksusrejser, F1 i Dubai. 7 personer fængslet.",
+        lostValue: "Danmarks største korruptionssag i den offentlige sektor. Offentlige midler brugt på bestikkelse og luksus.",
+        severity: "catastrophic",
+        vendors: "Atea (nordisk IT-virksomhed)",
+        timeline: [
+            { year: "2007-2014", event: "Region Sjælland køber IT-udstyr for 693 mio. kr. fra Atea. Hemmelig 'Konto 2840' oprettes med 45 mio. kr." },
+            { year: "2014", event: "Sagen ruller. Politiet efterforsker systematisk korruption. Luksusrejser, Formel 1 i Dubai, dyre middage afsløres." },
+            { year: "2016", event: "Første anholdelser. Tidligere regionsdirektør og Atea-chefer sigtes." },
+            { year: "2018-2019", event: "7 personer dømmes og fængsles. Danmarks største dom for offentlig korruption." },
+        ],
+        rootCauses: [
+            {
+                cause: "Hemmelig konto med 45 mio. kr.",
+                detail: "'Konto 2840' blev brugt til at kanalisere offentlige midler til bestikkelse. Luksusrejser, Formel 1 i Dubai, dyre middage."
+            },
+            {
+                cause: "Ingen kontrol med IT-indkøb",
+                detail: "693 mio. kr. i IT-køb uden tilstrækkelig kontrol. Offentlige indkøbsprocesser er sårbare over for korruption når kontrollen svigter."
+            },
+            {
+                cause: "Systemisk problem, ikke enkeltstående",
+                detail: "7 fængslet. Det var ikke én rådden person - det var et helt netværk. Og spørgsmålet er: hvor mange lignende sager opdages aldrig?"
+            },
+        ],
+    },
+    {
+        id: "udbetaling-dk-it",
+        name: "Udbetaling Danmark IT-kaos",
+        icon: "",
+        org: "Udbetaling Danmark / ATP",
+        years: "2012–nu",
+        budgetOriginal: "Diverse",
+        budgetFinal: "Diverse",
+        outcome: "Fejlbetalinger af boligstøtte, barselsdagpenge, studiegæld. 2.000+ ekstra klager på ét år.",
+        lostValue: "Tusindvis af borgere ramt af fejlagtige udbetalinger. Legacy-systemer beskrevet som 'usikre og ustabile'.",
+        severity: "critical",
+        vendors: "Diverse (legacy-systemer fra KMD m.fl.)",
+        timeline: [
+            { year: "2012", event: "Udbetaling Danmark oprettes. Overtager kommunale udbetalingsopgaver. Arver aldrende IT-systemer." },
+            { year: "2018-2020", event: "Gentagne fejl i boligstøtte, barselsdagpenge og studiegæld. Borgere får for lidt eller for meget udbetalt." },
+            { year: "2022", event: "2.000+ ekstra klager på ét år. Ombudsmanden kritiserer sagsbehandlingstider." },
+            { year: "2024", event: "Interne rapporter beskriver legacy-systemer som 'usikre og ustabile'. Fejlbetalinger fortsætter." },
+        ],
+        rootCauses: [
+            {
+                cause: "Arvede legacy-systemer",
+                detail: "Udbetaling Danmark overtog IT-systemer fra 98 kommuner. Systemer der var 'usikre og ustabile' fra dag ét."
+            },
+            {
+                cause: "Borgere betaler for fejl",
+                detail: "Fejlagtige udbetalinger rammer de mest sårbare: folk på boligstøtte, barselsdagpenge og studerende. De har ikke ressourcer til at klage."
+            },
+            {
+                cause: "Ingen modernisering i sigte",
+                detail: "Systemerne beskrives som usikre, men der er ingen plan eller budget for fuld udskiftning."
+            },
+        ],
+    },
+    {
+        id: "lynetteholm",
+        name: "Lynetteholm",
+        icon: "",
+        org: "By & Havn / Transportministeriet / Københavns Kommune",
+        years: "2018–nu",
+        budgetOriginal: "2,5 mia. kr. (selve øen)",
+        budgetFinal: "4,2 mia. kr. (øen) + 22-40 mia. kr. (metro/ringvej)",
+        outcome: "Præsenteret som 'selvfinansierende'. Professorer beregner 5+ mia. kr. hul. Cyanid-overskridelse i 4 mdr.",
+        lostValue: "Miljøskandaler, urealistisk finansiering, demokratisk underskud. Potentielt Danmarks dyreste projekt.",
+        severity: "catastrophic",
+        vendors: "Diverse entreprenører",
+        timeline: [
+            { year: "2018", event: "Lynetteholm præsenteres som ny bydel i Københavns Havn. Budget: 2,5 mia. kr. for selve øen. 'Selvfinansierende' via grundsalg." },
+            { year: "2021", event: "Anlægslov vedtaget. Kritikere påpeger at metro og ringvej (22-40 mia. kr.) ikke er medregnet." },
+            { year: "2023", event: "Budget for øen vokset til 4,2 mia. kr. (+68%). Professorer beregner 5+ mia. kr. hul i finansieringen." },
+            { year: "2024", event: "Cyanid-overskridelse i havvandet i 4 måneder. Miljøorganisationer protesterer. Retssager om jordkørsel." },
+            { year: "2025", event: "Samlede omkostninger inkl. infrastruktur: potentielt 60+ mia. kr. Ingen ved hvem der betaler." },
+        ],
+        rootCauses: [
+            {
+                cause: "'Selvfinansierende' er en myte",
+                detail: "Præsenteret som gratis for skatteyderne. Professorer beregner 5+ mia. kr. hul. Grundsalg dækker ikke infrastrukturomkostninger."
+            },
+            {
+                cause: "Skjulte omkostninger",
+                detail: "Øen koster 4,2 mia. Men metroen koster 22-40 mia. oveni. Den samlede regning præsenteres aldrig samlet."
+            },
+            {
+                cause: "Miljøskandaler",
+                detail: "Cyanid-overskridelse i havvandet i 4 måneder. Overskred grænseværdier uden konsekvenser. Hvem kontrollerer kontrolløren?"
+            },
+        ],
+    },
+    {
+        id: "superhospitaler",
+        name: "Superhospitalerne: Danmarks dyreste byggeprojekt",
+        icon: "",
+        org: "Regionerne / Sundheds- og Ældreministeriet",
+        years: "2007–nu",
+        budgetOriginal: "~27 mia. kr. (samlet)",
+        budgetFinal: "35+ mia. kr.",
+        outcome: "Massive overskridelser på tværs af alle projekter. Nordsjællands Hospital: 70% over budget.",
+        lostValue: "8+ mia. kr. i overskridelser. Spareøvelser der fjerner sengepladser og lukker afdelinger.",
+        severity: "catastrophic",
+        vendors: "Diverse entreprenører og rådgivere",
+        timeline: [
+            { year: "2007", event: "Kvalitetsfonden oprettes. Staten bevilger ~27 mia. kr. til 16 sygehusbyggerier." },
+            { year: "2012-2015", event: "Budgetoverskridelser begynder. Projekter skæres til for at holde rammer. Sengepladser fjernes." },
+            { year: "2020", event: "Nyt Aalborg Universitetshospital: fra 5,9 til 7,7 mia. kr. (+30%). Nyt OUH: fra 6,3 til 7,3+ mia. kr." },
+            { year: "2023", event: "Nordsjællands Hospital (Nyt Hospital Nordsjælland): fra 4,9 til 8,5-9 mia. kr. - 70% over budget." },
+            { year: "2025", event: "Samlede overskridelser: 8+ mia. kr. Regioner må spare på drift for at dække anlæg." },
+        ],
+        rootCauses: [
+            {
+                cause: "Systematisk underbudgettering",
+                detail: "Alle 16 projekter rammes af overskridelser. Det er ikke uheld - det er et mønster. Budgetterne var urealistiske fra start."
+            },
+            {
+                cause: "Spare på drift for at dække anlæg",
+                detail: "Overskridelser dækkes ved at fjerne sengepladser og skære i personale. Patienter betaler prisen for dårlig planlægning."
+            },
+            {
+                cause: "Ingen uafhængig budgetkontrol",
+                detail: "Regionerne estimerede selv. Ingen KS1/KS2 som i Norge. Resultatet: 70% overskridelse på Nordsjællands Hospital."
+            },
+        ],
+    },
 ];
 
 /**
@@ -750,7 +1153,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Megaprojekt-fælden",
         description: "Store monolitiske systemer der skal løse alt på én gang. Ingen trinvis levering, ingen feedback loops.",
-        frequency: "Alle 20 sager",
+        frequency: "Alle 32 sager",
         color: "#ef4444"
     },
     {
@@ -758,7 +1161,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Kravspecifikation i blinde",
         description: "Organisationer kender ikke deres egne processer. Krav skrives af konsulenter der ikke forstår domænet.",
-        frequency: "Alle 20 sager",
+        frequency: "Alle 32 sager",
         color: "#f97316"
     },
     {
@@ -766,7 +1169,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Udbudsregler tvinger vandfald",
         description: "EU-udbudsregler behandler IT som byggeri. Lineær proces med fastlåst scope, men software kræver iteration.",
-        frequency: "16 af 20 sager",
+        frequency: "24 af 32 sager",
         color: "#eab308"
     },
     {
@@ -782,7 +1185,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Besparelser før systemet virker",
         description: "Medarbejdere fyres og gamle systemer nedlægges FØR det nye system er testet og i drift. Ingen plan B.",
-        frequency: "12 af 20 sager",
+        frequency: "18 af 32 sager",
         color: "#ec4899"
     },
     {
@@ -790,7 +1193,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Leverandør-optimisme",
         description: "'Den der vinder er den der lyver.' Leverandører underbudgetterer for at vinde, vel vidende at scope vil vokse.",
-        frequency: "16 af 20 sager",
+        frequency: "24 af 32 sager",
         color: "#06b6d4"
     },
     {
@@ -798,7 +1201,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Ingen tidlig brugertest",
         description: "Systemer bygges i årevis uden at rigtige brugere tester dem. Problemer opdages først ved go-live.",
-        frequency: "Alle 20 sager",
+        frequency: "Alle 32 sager",
         color: "#22c55e"
     },
     {
@@ -806,7 +1209,7 @@ const SYSTEMIC_ROOT_CAUSES = [
         icon: "",
         title: "Manglende gennemsigtighed",
         description: "Dokumenter holdes fortrolige. Fejl skjules. Ingen offentlig ansvarlighed eller læring.",
-        frequency: "12 af 20 sager",
+        frequency: "18 af 32 sager",
         color: "#94a3b8"
     },
 ];
@@ -1037,11 +1440,11 @@ const NORWAY_COMPARISON = {
 
     bottomLine: {
         title: "Hvad ville det betyde for Danmark?",
-        text: "Hvis Danmark havde Norges budgetoverskridelse på 8% i stedet for 108%, ville vi have sparet mindst 40-50 mia. kr. over de seneste 20 år - alene på de 20 dokumenterede sager. Det svarer til 2 nye superhospitaler, 5.000 ekstra sygeplejersker i 10 år, eller fuld modernisering af hele skatteministeriets IT.",
-        savingsEstimate: "40-50 mia. kr.",
+        text: "Hvis Danmark havde Norges budgetoverskridelse på 8% i stedet for 108%, ville vi have sparet mindst 60-70 mia. kr. over de seneste 20 år - alene på de 32 dokumenterede sager. Det svarer til 3 nye superhospitaler, 7.000 ekstra sygeplejersker i 10 år, eller fuld modernisering af hele skatteministeriets IT.",
+        savingsEstimate: "60-70 mia. kr.",
         equivalents: [
-            { label: "2 nye superhospitaler", icon: "" },
-            { label: "5.000 sygeplejersker i 10 år", icon: "" },
+            { label: "3 nye superhospitaler", icon: "" },
+            { label: "7.000 sygeplejersker i 10 år", icon: "" },
             { label: "Fuld modernisering af skatteministeriets 230 IT-systemer", icon: "" },
             { label: "Gratis tandlæge for alle danskere i 6 år", icon: "" },
         ],
@@ -1052,7 +1455,7 @@ const NORWAY_COMPARISON = {
  * Summary statistics for the "what could have been saved" calculation
  */
 const IT_WASTE_SUMMARY = {
-    totalWastedBn: 80,           // Conservative estimate: 80+ mia. kr. wasted on failed IT, infrastructure and transport over 30 years (20 documented cases, incl. IC4 16.7 mia.)
+    totalWastedBn: 120,          // Conservative estimate: 120+ mia. kr. wasted on failed IT, infrastructure and transport over 30 years (32 documented cases, incl. IC4 16.7 mia., Femern 12+ mia. overrun, Superhospitaler 8+ mia. overrun)
     annualConsultantBn: 13.5,    // 12-15 mia. kr./year on consultants
     avgOverrunPct: 108,          // Danish average
     norwayOverrunPct: 8,         // Norway comparison
