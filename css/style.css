@@ -82,6 +82,102 @@ header {
     margin: 0 auto;
 }
 
+/* Powered By Credits */
+.powered-by {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1.2rem;
+    flex-wrap: wrap;
+}
+
+.powered-label {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    opacity: 0.6;
+}
+
+.powered-credit {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.82rem;
+    font-weight: 500;
+    color: var(--text);
+    text-decoration: none;
+    padding: 0.3rem 0.7rem;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+    transition: all 0.25s ease;
+}
+
+a.powered-credit:hover {
+    background: rgba(200, 16, 46, 0.08);
+    border-color: rgba(200, 16, 46, 0.2);
+    color: var(--accent-light);
+}
+
+.powered-avatar {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.55rem;
+    font-weight: 800;
+    color: #fff;
+    flex-shrink: 0;
+}
+
+.powered-avatar.bob {
+    background: linear-gradient(135deg, var(--accent), var(--accent-light));
+}
+
+.powered-avatar.andreas {
+    background: linear-gradient(135deg, var(--blue), var(--cyan));
+}
+
+.powered-avatar.claude {
+    background: linear-gradient(135deg, #d97706, #f59e0b);
+    padding: 0;
+    overflow: hidden;
+}
+
+.claude-detective {
+    display: block;
+}
+
+.powered-sep {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    opacity: 0.4;
+}
+
+@media (max-width: 480px) {
+    .powered-by {
+        gap: 0.35rem;
+    }
+    .powered-credit {
+        font-size: 0.72rem;
+        padding: 0.25rem 0.55rem;
+    }
+    .powered-avatar {
+        width: 18px;
+        height: 18px;
+        font-size: 0.5rem;
+    }
+    .claude-detective {
+        width: 18px;
+        height: 18px;
+    }
+}
+
 /* === Cards === */
 .card {
     background: var(--bg-card);
