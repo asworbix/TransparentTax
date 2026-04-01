@@ -2,7 +2,7 @@
 
 **Dine skattekroner. Deres spild. Grav i skandalerne, konsulentregningerne og de ansvarlige.**
 
-## [Grav i Skattefilerne](https://asworbix.github.io/TransparentTax/)
+## [Grav i Skattefilerne](https://asworbix.github.io/skattefilerne/)
 
 ---
 
