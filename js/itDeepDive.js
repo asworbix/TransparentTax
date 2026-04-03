@@ -1723,92 +1723,98 @@ const NETCOMPANY_DEEP_DIVE = {
 };
 
 /**
- * ORBIX CORE — How AI-first development solves the problems exposed above
+ * ORBIX CORE — 100% Ownership. Zero Vendor Lock-in.
  * Sources: orbixcore.ai, research analysis of Danish public IT failure patterns
  */
 const ORBIX_CORE_DATA = {
-    tagline: "Software bygget med AI i kernen — ikke som eftertanke",
-    intro: "Hver eneste skandale på denne side har de samme fejl: ugennemsigtige processer, manglende kvalitetskontrol, leverandør-afhængighed og budgetter der eksploderer. Orbix Core er bygget til at eliminere dem alle.",
+    tagline: "100% ejerskab. Nul vendor lock-in. Hver eneste proces. Hvert eneste bit data. Dit.",
+    intro: "Den danske stat har tabt over 120 milliarder kroner fordi leverandører ejer koden, processerne og dataen — ikke skatteyderne. Orbix Core vender modellen på hovedet: alt hvad vi bygger, ejer du. Fuldt. Permanent. Uden undtagelser.",
 
-    problemSolutionMap: [
+    ownershipPillars: [
         {
-            problem: "Budget-eksplosioner (gennemsnit +108% i DK)",
-            howItHappens: "Konsulenter underbyder for at vinde, så tillægger ændringsordrer. Ingen realtids-overvågning af forbrug vs. levering.",
-            orbixSolution: "AI-agenter overvåger forbrug, velocity og scope i realtid. Afvigelser opdages i timer, ikke år. Fuld gennemsigtighed fra dag 1.",
-            exampleCase: "EFI: 500 mio. → 1+ mia. kr. over 10 år. Ingen opdagede det før Rigsrevisionen kiggede.",
+            icon: "01",
+            title: "100% kode-ejerskab",
+            desc: "Hver linje kode vi skriver, ejer du fra dag 1. Ingen proprietære frameworks, ingen licensnøgler, ingen afhængigheder af os. Du kan tage koden og gå — når som helst, uden spørgsmål.",
+            contrast: "I dag: Netcompany kontrollerer kildekoden til MitID, Digital Post, borger.dk og NemKonto. Staten kan ikke skifte leverandør uden at starte forfra. Det koster milliarder.",
         },
         {
-            problem: "Leverandør-monopol og vendor lock-in",
-            howItHappens: "Store firmaer skriver kode kun de forstår. Proprietære systemer gør skift umuligt. 33% af statens IT er hos ét firma.",
-            orbixSolution: "Alt bygges med åben arkitektur, dokumenteret af AI. Kodebasen er forståelig og overdragelig. Ingen black boxes.",
-            exampleCase: "Netcompany kontrollerer MitID, Digital Post, NemKonto, borger.dk — skift er praktisk umuligt.",
+            icon: "02",
+            title: "100% data-ejerskab",
+            desc: "Alle data forbliver hos dig. Ingen data forlader din infrastruktur. Ingen tredjeparter har adgang. Du bestemmer hvor dataen ligger, hvem der ser den, og hvornår den slettes.",
+            contrast: "I dag: Digital Post-migrationen afslørede at 1,4 mia. dokumenter blev flyttet med utilstrækkelig test. Borgere kunne læse andres post. GDPR-bøde: 15 mio. kr.",
         },
         {
-            problem: "Kvalitetsfejl der rammer borgere",
-            howItHappens: "Utilstrækkelig test, rushed deadlines, ingen automatiseret kvalitetskontrol. Fejl opdages efter go-live.",
-            orbixSolution: "AI-drevet test fra første linje kode. Automatisk sikkerhedsscanning, GDPR-compliance-check og performance-test i hver iteration.",
-            exampleCase: "Digital Post: Borgere kunne læse andres post på dag 1. GDPR-bøde: 15 mio. kr.",
+            icon: "03",
+            title: "100% proces-ejerskab",
+            desc: "Du ejer hele udviklingsprocessen: kravspecifikationer, arkitekturbeslutninger, testresultater, deploymentpipelines, dokumentation. Alt er gennemsigtigt og overdragbart.",
+            contrast: "I dag: EFI-projektet kørte i 10 år uden at nogen opdagede at budgettet var eksploderet fra 500 mio. til 1+ mia. kr. Processen var en sort boks.",
         },
         {
-            problem: "Forsinkelser (gennemsnit 4,9 år i stedet for 4)",
-            howItHappens: "Vandfaldsmodel, uklare krav, manglende teknisk ledelse. Problemer eskalerer først når det er for sent.",
-            orbixSolution: "AI accelererer kravanalyse, arkitektur-design og kodegenerering. Iterativ levering med synlige fremskridt hver uge.",
-            exampleCase: "Pol-Disp: Planlagt 2023, nu 2027 for København. 4 år forsinket.",
+            icon: "04",
+            title: "100% AI-agent-ejerskab",
+            desc: "De AI-agenter vi bygger til dig, ejer du. De kører på din infrastruktur, med dine data, under din kontrol. Ingen abonnementer der holder dig som gidsel.",
+            contrast: "I dag: Staten bruger 4+ mia. kr./år på IT-konsulenter. Når de går, tager de viden, processer og kontekst med sig. Hver gang starter man forfra.",
         },
         {
-            problem: "Konsulent-afhængighed (4+ mia. kr./år)",
-            howItHappens: "Organisationer har ikke intern kapacitet. Konsulenter til 15.000 kr./timen bygger viden der forsvinder når kontrakten slutter.",
-            orbixSolution: "AI-agenter erstatter rutinemæssigt konsulentarbejde. Viden dokumenteres automatisk og forbliver i organisationen.",
-            exampleCase: "Staten bruger 4+ mia. kr./år på IT-konsulenter. Netcompany alene: 734 mio. kr./år.",
+            icon: "05",
+            title: "100% frihed til at skifte",
+            desc: "Alt bygges med åbne standarder og fuld dokumentation. Du kan skifte leverandør, insource, eller videreudvikle selv — uden tab af funktionalitet eller viden.",
+            contrast: "I dag: 289 af statens 723 IT-systemer kan IKKE sendes i udbud pga. vendor lock-in. Leverandøren har magten, ikke kunden.",
         },
         {
-            problem: "Sikkerhedshuller i kritisk infrastruktur",
-            howItHappens: "537 servere kan ikke opdateres. 28% af systemer i dårlig stand. Passwords lækket fra produktionsservere.",
-            orbixSolution: "Sikkerhed er indbygget fra start — ikke tilføjet bagefter. AI scanner kontinuerligt for sårbarheder, forældede afhængigheder og compliance-brud.",
-            exampleCase: "Zyndicate-sagen: Password fra Netcompany fundet på statsserver → adgang til 20 produktionssystemer.",
+            icon: "06",
+            title: "100% gennemsigtighed",
+            desc: "Intet skjult. Ingen ændringsordrer. Ingen overraskelser. Du ser realtidsstatus på forbrug, fremdrift, kvalitet og sikkerhed — som et live dashboard, ikke en kvartalsrapport.",
+            contrast: "I dag: Pol-Disp (politiets system) gik fra 200 mio. til 388 mio. kr. Forsinkelser og ekstraregninger blev først synlige efter årevis.",
         },
     ],
 
-    keyDifferentiators: [
+    vendorLockInStats: {
+        title: "Vendor lock-in i tal — det problem Orbix Core løser",
+        stats: [
+            { value: "289", label: "statslige IT-systemer der IKKE kan sendes i udbud", note: "Total vendor lock-in" },
+            { value: "33%", label: "af statens IT-projekter kontrolleret af ét firma", note: "Netcompany (34 af 104)" },
+            { value: "4+ mia.", label: "kr./år på IT-konsulenter", note: "Viden forsvinder med fakturaen" },
+            { value: "108%", label: "gennemsnitlig budgetoverskridelse", note: "Norge: 8%. Danmark: 108%." },
+        ],
+    },
+
+    howItWorks: [
         {
-            title: "AI-agenter i hvert trin",
-            desc: "Fra kravanalyse og arkitektur til test, deployment og overvågning. Ikke AI som marketing — AI som fundamental arbejdsmetode.",
+            step: "1",
+            title: "Vi bygger — du ejer",
+            desc: "Orbix Core udvikler med AI-agenter i kernen. Hurtigere, billigere, med færre fejl. Men forskellen er: alt vi bygger, overdrages til dig med fuld dokumentation og åben kildekode.",
         },
         {
-            title: "Fuld gennemsigtighed",
-            desc: "Kunden ser alt: kode, beslutninger, testresultater, forbrug. Ingen sorte bokse, ingen overraskelser ved næste faktura.",
+            step: "2",
+            title: "Vi træner — du mestrer",
+            desc: "Vi gør ikke din organisation afhængig. Vi træner dit team i AI-drevet udvikling, så I selv kan vedligeholde, videreudvikle og skalere — uden os.",
         },
         {
-            title: "Ekspertisen forbliver intern",
-            desc: "Orbix Core træner kundens team i AI-drevet udvikling. Målet er at gøre kunden selvkørende — ikke afhængig.",
-        },
-        {
-            title: "Åben arkitektur, ingen lock-in",
-            desc: "Alt bygges med åbne standarder og overdragelig kode. Kunden ejer alt og kan skifte leverandør når som helst.",
-        },
-        {
-            title: "Hurtigere, billigere, bedre",
-            desc: "AI reducerer leveringstiden med 30-60%, fanger fejl før de når produktion, og sænker omkostningerne til en brøkdel af traditionel konsulentudvikling.",
+            step: "3",
+            title: "Vi går — du beholder alt",
+            desc: "Når projektet er færdigt, har du koden, dataen, processerne, AI-agenterne og kompetencen. Internt. Permanent. Ingen løbende licensbetalinger, ingen opsigelsesklausuler.",
         },
     ],
 
     comparisonTable: {
-        headers: ["", "Traditionel konsulentmodel", "Orbix Core AI-model"],
+        headers: ["", "Typisk leverandør", "Orbix Core"],
         rows: [
-            ["Gennemsigtighed", "Kunden ser resultatet, ikke processen", "Alt er synligt i realtid"],
-            ["Budgetkontrol", "Ændringsordrer og tillæg", "AI overvåger forbrug vs. levering"],
-            ["Kvalitetssikring", "Manuel test, ofte efter go-live", "Automatisk AI-test i hvert trin"],
-            ["Leverandørskift", "Praktisk umuligt (vendor lock-in)", "Åben kode, overdragelig fra dag 1"],
-            ["Videnoverførsel", "Forsvinder med konsulenten", "Dokumenteres automatisk, forbliver internt"],
-            ["Sikkerhed", "Tilføjes som eftertanke", "Indbygget fra første linje kode"],
-            ["Pris pr. funktionspunkt", "15.000 kr./time konsulenttakst", "Brøkdel — AI gør det tunge løft"],
+            ["Kode-ejerskab", "Leverandøren ejer koden", "Kunden ejer 100%"],
+            ["Data-placering", "Leverandørens infrastruktur", "Kundens infrastruktur"],
+            ["Leverandørskift", "Praktisk umuligt", "Når som helst, fuld overdragelse"],
+            ["Dokumentation", "Minimal eller proprietær", "Fuld, åben, AI-genereret"],
+            ["AI-agenter", "SaaS-abonnement", "Kører hos kunden, ejerskab fra dag 1"],
+            ["Videnoverførsel", "Forsvinder med konsulenten", "Trænet internt team overtager"],
+            ["Gennemsigtighed", "Kvartalsrapporter", "Live dashboard, realtid"],
+            ["Exit-omkostning", "Millioner (start forfra)", "Nul (alt er portabelt)"],
         ],
     },
 
     callToAction: {
-        headline: "Danmark har brændt 120+ milliarder på den gamle model. Det er tid til en ny.",
-        body: "Orbix Core beviser at software kan bygges hurtigere, billigere og med fuld gennemsigtighed — uden at ofre kvalitet eller sikkerhed. Det eneste det kræver er viljen til at gøre det anderledes.",
-        linkText: "Udforsk Orbix Core",
+        headline: "Stop med at leje din egen infrastruktur. Ej den.",
+        body: "120+ milliarder kroner er spildt fordi den offentlige sektor lejer systemer de burde eje. Orbix Core bygger software med AI — hurtigere, billigere, gennemsigtigt — og du ejer hver eneste del. Kode. Data. Processer. AI-agenter. Alt.",
+        linkText: "Se hvordan på orbixcore.ai",
         linkUrl: "https://orbixcore.ai",
     },
 };

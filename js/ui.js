@@ -835,39 +835,48 @@ function renderOrbixCore() {
             <p>${o.intro}</p>
         </div>
 
-        <h3 class="kh-sub-heading">Problem → Løsning: Punkt for punkt</h3>
-        <div class="orbix-problems-grid">
-            ${o.problemSolutionMap.map(p => `
-                <div class="orbix-problem-card">
-                    <div class="orbix-problem-header">
-                        <h4>${p.problem}</h4>
-                    </div>
-                    <div class="orbix-problem-body">
-                        <div class="orbix-problem-side">
-                            <span class="orbix-label orbix-label-bad">Hvordan det sker i dag</span>
-                            <p>${p.howItHappens}</p>
-                            <span class="orbix-case-ref">${p.exampleCase}</span>
-                        </div>
-                        <div class="orbix-solution-side">
-                            <span class="orbix-label orbix-label-good">Orbix Core-tilgangen</span>
-                            <p>${p.orbixSolution}</p>
+        <h3 class="kh-sub-heading">${o.vendorLockInStats.title}</h3>
+        <div class="kh-stats-grid">
+            ${o.vendorLockInStats.stats.map(s => `
+                <div class="kh-stat-card kh-stat-cost">
+                    <div class="kh-stat-value">${s.value}</div>
+                    <div class="kh-stat-label">${s.label}</div>
+                    <div class="kh-stat-note">${s.note}</div>
+                </div>
+            `).join('')}
+        </div>
+
+        <h3 class="kh-sub-heading">6 garantier — dit fulde ejerskab</h3>
+        <div class="orbix-pillars">
+            ${o.ownershipPillars.map(p => `
+                <div class="orbix-pillar-card">
+                    <div class="orbix-pillar-number">${p.icon}</div>
+                    <div class="orbix-pillar-content">
+                        <h4>${p.title}</h4>
+                        <p class="orbix-pillar-desc">${p.desc}</p>
+                        <div class="orbix-pillar-contrast">
+                            <span class="orbix-label orbix-label-bad">Virkeligheden i dag</span>
+                            <p>${p.contrast}</p>
                         </div>
                     </div>
                 </div>
             `).join('')}
         </div>
 
-        <h3 class="kh-sub-heading">Hvad gør Orbix Core anderledes?</h3>
-        <div class="orbix-differentiators">
-            ${o.keyDifferentiators.map(d => `
-                <div class="orbix-diff-card">
-                    <h4>${d.title}</h4>
-                    <p>${d.desc}</p>
+        <h3 class="kh-sub-heading">Sådan virker det</h3>
+        <div class="orbix-steps">
+            ${o.howItWorks.map(s => `
+                <div class="orbix-step">
+                    <div class="orbix-step-num">${s.step}</div>
+                    <div class="orbix-step-content">
+                        <h4>${s.title}</h4>
+                        <p>${s.desc}</p>
+                    </div>
                 </div>
             `).join('')}
         </div>
 
-        <h3 class="kh-sub-heading">Den gamle model vs. den nye</h3>
+        <h3 class="kh-sub-heading">Typisk leverandør vs. Orbix Core</h3>
         <div class="orbix-comparison-table-wrap">
             <table class="orbix-comparison-table">
                 <thead>

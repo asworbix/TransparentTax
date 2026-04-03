@@ -9,6 +9,7 @@
         initFloatingNav();
         initScrollProgress();
         initSectionAnimations();
+        initReadingTimeline();
     });
 })();
 
@@ -94,6 +95,85 @@ function initScrollProgress() {
         var pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
         bar.style.width = pct + '%';
     }, { passive: true });
+}
+
+/**
+ * Reading timeline — clickable steps that switch tabs + track progress
+ */
+function initReadingTimeline() {
+    var steps = document.querySelectorAll('.rt-step');
+    var section = document.getElementById('it-deepdive-section');
+    if (!steps.length || !section) return;
+
+    var visited = new Set(['cases']); // first tab starts visited
+
+    steps.forEach(function (step) {
+        step.addEventListener('click', function () {
+            var tabId = this.dataset.tab;
+            if (!tabId) return;
+
+            // Switch the tab
+            var tabs = section.querySelectorAll('.spending-tab');
+            var contents = section.querySelectorAll('.spending-tab-content');
+            tabs.forEach(function (t) { t.classList.remove('active'); });
+            contents.forEach(function (c) { c.classList.remove('active'); });
+
+            var matchingTab = section.querySelector('.spending-tab[data-tab="' + tabId + '"]');
+            if (matchingTab) matchingTab.classList.add('active');
+            var matchingContent = section.querySelector('#tab-' + tabId);
+            if (matchingContent) matchingContent.classList.add('active');
+
+            // Update reading timeline state
+            visited.add(tabId);
+            updateTimelineState(steps, tabId, visited);
+
+            // Sync floating nav
+            var navItems = document.querySelectorAll('.fnav-item');
+            navItems.forEach(function (n) {
+                if (n.dataset.tab === tabId) {
+                    n.classList.add('active');
+                } else if (n.dataset.section === 'it-deepdive-section') {
+                    n.classList.remove('active');
+                }
+            });
+
+            // Scroll to section
+            section.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        });
+    });
+
+    // Also sync when inline tabs or floating nav are clicked
+    var inlineTabs = section.querySelectorAll('.spending-tab');
+    inlineTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () {
+            var tabId = this.dataset.tab;
+            visited.add(tabId);
+            updateTimelineState(steps, tabId, visited);
+        });
+    });
+
+    var navItems = document.querySelectorAll('.fnav-item');
+    navItems.forEach(function (item) {
+        item.addEventListener('click', function () {
+            var tabId = this.dataset.tab;
+            if (tabId) {
+                visited.add(tabId);
+                updateTimelineState(steps, tabId, visited);
+            }
+        });
+    });
+}
+
+function updateTimelineState(steps, activeTab, visited) {
+    steps.forEach(function (step) {
+        var tabId = step.dataset.tab;
+        step.classList.remove('rt-active', 'rt-completed');
+        if (tabId === activeTab) {
+            step.classList.add('rt-active');
+        } else if (visited.has(tabId)) {
+            step.classList.add('rt-completed');
+        }
+    });
 }
 
 /**

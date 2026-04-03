@@ -3834,6 +3834,133 @@ footer::before {
     50% { box-shadow: 0 0 8px rgba(239, 68, 68, 0.3); }
 }
 
+/* --- Reading Timeline --- */
+.reading-timeline {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 1.5rem 0;
+    margin-bottom: 1rem;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.reading-timeline::-webkit-scrollbar {
+    display: none;
+}
+
+.rt-step {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    cursor: pointer;
+    padding: 0.5rem 0.75rem;
+    border-radius: 10px;
+    transition: background 0.3s, transform 0.2s;
+    flex-shrink: 0;
+    min-width: max-content;
+}
+
+.rt-step:hover {
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(-2px);
+}
+
+.rt-step.rt-active {
+    background: rgba(200, 16, 46, 0.1);
+}
+
+.rt-step.rt-active .rt-num {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 0 12px rgba(200, 16, 46, 0.4);
+}
+
+.rt-step.rt-completed .rt-num {
+    background: rgba(34, 197, 94, 0.2);
+    color: #22c55e;
+    border-color: rgba(34, 197, 94, 0.4);
+}
+
+.rt-step.rt-completed .rt-num::after {
+    content: '';
+}
+
+.rt-num {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+    font-weight: 700;
+    background: rgba(255, 255, 255, 0.06);
+    color: rgba(255, 255, 255, 0.5);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    transition: all 0.3s;
+    flex-shrink: 0;
+}
+
+.rt-info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.1rem;
+}
+
+.rt-title {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+}
+
+.rt-desc {
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.4);
+    white-space: nowrap;
+}
+
+.rt-connector {
+    width: 24px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+    flex-shrink: 0;
+}
+
+.rt-step.rt-completed + .rt-connector {
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.3), rgba(255, 255, 255, 0.1));
+}
+
+@media (max-width: 900px) {
+    .reading-timeline {
+        padding: 1rem 0;
+    }
+
+    .rt-step {
+        padding: 0.4rem 0.5rem;
+    }
+
+    .rt-num {
+        width: 28px;
+        height: 28px;
+        font-size: 0.7rem;
+    }
+
+    .rt-title {
+        font-size: 0.72rem;
+    }
+
+    .rt-desc {
+        display: none;
+    }
+
+    .rt-connector {
+        width: 12px;
+    }
+}
+
 /* --- Orbix Core Section --- */
 .orbix-intro {
     margin-bottom: 2rem;
@@ -3928,36 +4055,129 @@ footer::before {
     padding-top: 0.5rem;
 }
 
-.orbix-differentiators {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+/* Ownership Pillars */
+.orbix-pillars {
+    display: flex;
+    flex-direction: column;
     gap: 1rem;
     margin-bottom: 2rem;
 }
 
-.orbix-diff-card {
+.orbix-pillar-card {
+    display: flex;
+    gap: 1.25rem;
+    background: rgba(255, 255, 255, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    padding: 1.5rem;
+    transition: border-color 0.3s, transform 0.2s;
+}
+
+.orbix-pillar-card:hover {
+    border-color: rgba(34, 197, 94, 0.3);
+    transform: translateX(4px);
+}
+
+.orbix-pillar-number {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: #22c55e;
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    width: 40px;
+    text-align: center;
+}
+
+.orbix-pillar-content h4 {
+    color: #22c55e;
+    margin: 0 0 0.5rem;
+    font-size: 1rem;
+}
+
+.orbix-pillar-desc {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.88rem;
+    margin: 0 0 0.75rem;
+    line-height: 1.6;
+}
+
+.orbix-pillar-contrast {
+    background: rgba(239, 68, 68, 0.04);
+    border: 1px solid rgba(239, 68, 68, 0.1);
+    border-radius: 8px;
+    padding: 0.75rem 1rem;
+}
+
+.orbix-pillar-contrast p {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 0.8rem;
+    margin: 0.25rem 0 0;
+    font-style: italic;
+}
+
+/* Steps (How it works) */
+.orbix-steps {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.orbix-step {
+    flex: 1;
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.08);
-    border-radius: 10px;
-    padding: 1.25rem;
-    transition: border-color 0.3s, box-shadow 0.3s;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+    position: relative;
+    transition: border-color 0.3s;
 }
 
-.orbix-diff-card:hover {
-    border-color: rgba(34, 197, 94, 0.3);
-    box-shadow: 0 0 20px rgba(34, 197, 94, 0.05);
+.orbix-step:hover {
+    border-color: rgba(34, 197, 94, 0.25);
 }
 
-.orbix-diff-card h4 {
-    color: #22c55e;
+.orbix-step-num {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff;
+    font-weight: 800;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1rem;
+}
+
+.orbix-step-content h4 {
+    color: #fff;
     margin: 0 0 0.5rem;
     font-size: 0.95rem;
 }
 
-.orbix-diff-card p {
-    color: rgba(255, 255, 255, 0.7);
-    font-size: 0.85rem;
+.orbix-step-content p {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.82rem;
     margin: 0;
+    line-height: 1.5;
+}
+
+@media (max-width: 700px) {
+    .orbix-steps {
+        flex-direction: column;
+    }
+
+    .orbix-pillar-card {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .orbix-pillar-number {
+        font-size: 1.2rem;
+    }
 }
 
 .orbix-comparison-table-wrap {
