@@ -699,9 +699,9 @@ function renderNetcompanyDeepDive() {
     let html = `
         <div class="kh-stats-grid">
             <div class="kh-stat-card kh-stat-primary">
-                <div class="kh-stat-value">${n.overview.revenue2024}</div>
-                <div class="kh-stat-label">Omsætning 2024</div>
-                <div class="kh-stat-note">Offentlig sektor vokser ${n.overview.publicSectorGrowthQ1_2025} (Q1 2025)</div>
+                <div class="kh-stat-value">${n.overview.revenue2025}</div>
+                <div class="kh-stat-label">Omsætning 2025</div>
+                <div class="kh-stat-note">+${n.overview.revenueGrowth} vækst. ${n.overview.earningsDown}</div>
             </div>
             <div class="kh-stat-card kh-stat-cost">
                 <div class="kh-stat-value">~33%</div>
@@ -714,10 +714,24 @@ function renderNetcompanyDeepDive() {
                 <div class="kh-stat-note">Absolut bundplacering (Ingeniøren 2025)</div>
             </div>
             <div class="kh-stat-card kh-stat-cost">
-                <div class="kh-stat-value">21,7%</div>
-                <div class="kh-stat-label">Medarbejderomsætning</div>
-                <div class="kh-stat-note">~400 forlader om året. IDA: 100+ opsigelsessager</div>
+                <div class="kh-stat-value">${n.overview.employees}</div>
+                <div class="kh-stat-label">Medarbejdere</div>
+                <div class="kh-stat-note">Inkl. SDC-opkøb (1 mia. kr.). 21,7% omsætning. 100+ NDA-fratrædelser</div>
             </div>
+        </div>
+
+        <h3 class="kh-sub-heading">Tidslinje 2025-2026</h3>
+        <div class="scandal-consultant-list">
+            ${n.timeline2025_2026.map(t => `
+                <div class="scandal-consultant-card">
+                    <div class="scandal-consultant-header">
+                        <h4>${t.date}</h4>
+                    </div>
+                    <div class="scandal-details">
+                        <p>${t.event}</p>
+                    </div>
+                </div>
+            `).join('')}
         </div>
 
         <h3 class="kh-sub-heading">Hvorfor vinder Netcompany altid?</h3>
@@ -791,6 +805,7 @@ function renderNetcompanyDeepDive() {
                 <div class="scandal-details">
                     <p><strong>IDA:</strong> ${n.workCulture.idaSager}</p>
                     <p class="consultant-controversy"><strong>PROSA:</strong> ${n.workCulture.prosaWarning}</p>
+                    <p><strong>SDC-opkøbet:</strong> ${n.workCulture.sdcOverenskomst}</p>
                     <p><strong>Netcompany:</strong> ${n.workCulture.netcompanyResponse}</p>
                 </div>
             </div>
@@ -808,6 +823,80 @@ function renderNetcompanyDeepDive() {
     container.innerHTML = html;
 }
 
+function renderOrbixCore() {
+    const container = document.getElementById('orbixcore-section');
+    if (!container || typeof ORBIX_CORE_DATA === 'undefined') return;
+
+    const o = ORBIX_CORE_DATA;
+
+    let html = `
+        <div class="orbix-intro">
+            <p class="orbix-tagline">${o.tagline}</p>
+            <p>${o.intro}</p>
+        </div>
+
+        <h3 class="kh-sub-heading">Problem → Løsning: Punkt for punkt</h3>
+        <div class="orbix-problems-grid">
+            ${o.problemSolutionMap.map(p => `
+                <div class="orbix-problem-card">
+                    <div class="orbix-problem-header">
+                        <h4>${p.problem}</h4>
+                    </div>
+                    <div class="orbix-problem-body">
+                        <div class="orbix-problem-side">
+                            <span class="orbix-label orbix-label-bad">Hvordan det sker i dag</span>
+                            <p>${p.howItHappens}</p>
+                            <span class="orbix-case-ref">${p.exampleCase}</span>
+                        </div>
+                        <div class="orbix-solution-side">
+                            <span class="orbix-label orbix-label-good">Orbix Core-tilgangen</span>
+                            <p>${p.orbixSolution}</p>
+                        </div>
+                    </div>
+                </div>
+            `).join('')}
+        </div>
+
+        <h3 class="kh-sub-heading">Hvad gør Orbix Core anderledes?</h3>
+        <div class="orbix-differentiators">
+            ${o.keyDifferentiators.map(d => `
+                <div class="orbix-diff-card">
+                    <h4>${d.title}</h4>
+                    <p>${d.desc}</p>
+                </div>
+            `).join('')}
+        </div>
+
+        <h3 class="kh-sub-heading">Den gamle model vs. den nye</h3>
+        <div class="orbix-comparison-table-wrap">
+            <table class="orbix-comparison-table">
+                <thead>
+                    <tr>
+                        ${o.comparisonTable.headers.map(h => `<th>${h}</th>`).join('')}
+                    </tr>
+                </thead>
+                <tbody>
+                    ${o.comparisonTable.rows.map(row => `
+                        <tr>
+                            <td class="orbix-row-label">${row[0]}</td>
+                            <td class="orbix-col-old">${row[1]}</td>
+                            <td class="orbix-col-new">${row[2]}</td>
+                        </tr>
+                    `).join('')}
+                </tbody>
+            </table>
+        </div>
+
+        <div class="orbix-cta-section">
+            <h3>${o.callToAction.headline}</h3>
+            <p>${o.callToAction.body}</p>
+            <a href="${o.callToAction.linkUrl}" target="_blank" rel="noopener" class="orbix-cta-button">${o.callToAction.linkText}</a>
+        </div>
+    `;
+
+    container.innerHTML = html;
+}
+
 function renderITDeepDive() {
     initDeepDiveTabs();
     renderCaseStudies();
@@ -817,4 +906,5 @@ function renderITDeepDive() {
     renderRootCauses();
     renderSolutions();
     renderSavingsCalculator();
+    renderOrbixCore();
 }

@@ -3834,6 +3834,231 @@ footer::before {
     50% { box-shadow: 0 0 8px rgba(239, 68, 68, 0.3); }
 }
 
+/* --- Orbix Core Section --- */
+.orbix-intro {
+    margin-bottom: 2rem;
+}
+
+.orbix-tagline {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+}
+
+.orbix-problems-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.orbix-problem-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+}
+
+.orbix-problem-card:hover {
+    border-color: rgba(200, 16, 46, 0.3);
+}
+
+.orbix-problem-header {
+    padding: 1rem 1.25rem;
+    background: rgba(200, 16, 46, 0.08);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.orbix-problem-header h4 {
+    color: #fff;
+    margin: 0;
+    font-size: 1rem;
+}
+
+.orbix-problem-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+}
+
+.orbix-problem-side,
+.orbix-solution-side {
+    padding: 1rem 1.25rem;
+}
+
+.orbix-problem-side {
+    border-right: 1px solid rgba(255, 255, 255, 0.06);
+    background: rgba(239, 68, 68, 0.03);
+}
+
+.orbix-solution-side {
+    background: rgba(34, 197, 94, 0.03);
+}
+
+.orbix-label {
+    display: inline-block;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.2rem 0.5rem;
+    border-radius: 4px;
+    margin-bottom: 0.5rem;
+}
+
+.orbix-label-bad {
+    background: rgba(239, 68, 68, 0.15);
+    color: #ef4444;
+}
+
+.orbix-label-good {
+    background: rgba(34, 197, 94, 0.15);
+    color: #22c55e;
+}
+
+.orbix-case-ref {
+    display: block;
+    margin-top: 0.75rem;
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.4);
+    font-style: italic;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 0.5rem;
+}
+
+.orbix-differentiators {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.orbix-diff-card {
+    background: rgba(255, 255, 255, 0.03);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 10px;
+    padding: 1.25rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.orbix-diff-card:hover {
+    border-color: rgba(34, 197, 94, 0.3);
+    box-shadow: 0 0 20px rgba(34, 197, 94, 0.05);
+}
+
+.orbix-diff-card h4 {
+    color: #22c55e;
+    margin: 0 0 0.5rem;
+    font-size: 0.95rem;
+}
+
+.orbix-diff-card p {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.85rem;
+    margin: 0;
+}
+
+.orbix-comparison-table-wrap {
+    overflow-x: auto;
+    margin-bottom: 2rem;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.orbix-comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.orbix-comparison-table th {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 0.75rem 1rem;
+    text-align: left;
+    font-weight: 600;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.orbix-comparison-table td {
+    padding: 0.65rem 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+.orbix-row-label {
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.9);
+    white-space: nowrap;
+}
+
+.orbix-col-old {
+    color: rgba(239, 68, 68, 0.8);
+}
+
+.orbix-col-new {
+    color: rgba(34, 197, 94, 0.9);
+    font-weight: 500;
+}
+
+.orbix-comparison-table tr:hover td {
+    background: rgba(255, 255, 255, 0.02);
+}
+
+.orbix-cta-section {
+    text-align: center;
+    padding: 2.5rem 1.5rem;
+    background: linear-gradient(135deg, rgba(34, 197, 94, 0.06), rgba(200, 16, 46, 0.04));
+    border: 1px solid rgba(34, 197, 94, 0.15);
+    border-radius: 14px;
+    margin-top: 2rem;
+}
+
+.orbix-cta-section h3 {
+    font-size: 1.2rem;
+    color: #fff;
+    margin-bottom: 0.75rem;
+}
+
+.orbix-cta-section p {
+    color: rgba(255, 255, 255, 0.7);
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    font-size: 0.9rem;
+}
+
+.orbix-cta-button {
+    display: inline-block;
+    padding: 0.75rem 2rem;
+    background: linear-gradient(135deg, #22c55e, #16a34a);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.orbix-cta-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.3);
+}
+
+@media (max-width: 600px) {
+    .orbix-problem-body {
+        grid-template-columns: 1fr;
+    }
+
+    .orbix-problem-side {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    }
+
+    .orbix-differentiators {
+        grid-template-columns: 1fr;
+    }
+}
+
 /* --- Smooth scrolling for anchor links --- */
 html {
     scroll-padding-top: 1rem;

@@ -1631,15 +1631,31 @@ const CONSULTANT_DATA = {
  */
 const NETCOMPANY_DEEP_DIVE = {
     overview: {
-        revenue2024: "6,5 mia. kr.",
-        revenueGrowth: "7,6%",
+        revenue2025: "7,9 mia. kr.",
+        revenueGrowth: "20,7%",
+        earningsDown: "Resultat faldet 45,4% pga. SDC-integration",
         publicSectorGrowthQ1_2025: "13,5%",
         stateProjectShare: "~33% af statens IT-projekter (34 af 104)",
         stateSystemShare: "~15% af statens IT-systemer (111 af 723)",
         danmarkShareOfRevenue: "Over 50%",
-        employees: "7.000+",
-        founded: "2000 af André Rogaczewski og Bo Lynge Sørensen",
+        employees: "8.929 (inkl. SDC)",
+        founded: "2000 af André Rogaczewski og Claus Jørgensen",
+        sdcAcquisition: "Opkøbte SDC for 1 mia. kr. (2025). Opsagde overenskomst dag 1. Strejke truede 2 mio. bankkunder. Ny aftale jan. 2026 efter 5 måneders pres.",
+        sharesBuyback2026: "Aktietilbagekøb op til 750 mio. kr. (feb. 2026). Hævede marginforventninger marts 2026.",
     },
+
+    timeline2025_2026: [
+        { date: "Feb 2025", event: "Netcompany annoncerer opkøb af SDC (bankernes IT-leverandør) for 1 mia. kr." },
+        { date: "Jan 2025", event: "35-årig dømt for datatyveri — brugte Netcompany-password fundet på statslig server til at tilgå 20 produktionssystemer." },
+        { date: "Jul 2025", event: "SDC-opkøb lukkes. Overenskomst opsagt dag 1. 630 medarbejdere ramt." },
+        { date: "Jul 2025", event: "Datatilsynet: 'alvorlig kritik' af Digital Post-migrationen. Borgere kunne læse andres post." },
+        { date: "Okt 2025", event: "Pol-Disp forsinket igen. Pris steget fra 200 til 388 mio. kr. København først 2027." },
+        { date: "Nov 2025", event: "Stort MitID-nedbrud rammer borger.dk og offentlige tjenester." },
+        { date: "Jan 2026", event: "Ny overenskomst med Finansforbundet efter 5 måneders forhandling. Strejke afværget." },
+        { date: "Feb 2026", event: "Aktietilbagekøbsprogram op til 750 mio. kr. lanceret." },
+        { date: "Mar 2026", event: "To MitID-nedbrud på 3 uger. Apoteker lammet i 4,5 timer. 'Intern systemfejl.'" },
+        { date: "Mar 2026", event: "Netcompany hæver marginforventninger for 2026 — mens nedbrud fortsætter." },
+    ],
 
     whyTheyKeepWinning: [
         {
@@ -1661,12 +1677,15 @@ const NETCOMPANY_DEEP_DIVE = {
     ],
 
     documentedFailures: [
-        { project: "MitID/mit.dk", issue: "GDPR-bot 15 mio. kr. Borgere kunne logge ind på andres konti. 18.000 brugernavne lækket." },
+        { project: "MitID/mit.dk", issue: "GDPR-bot 15 mio. kr. Borgere kunne logge ind på andres konti. 18.000 brugernavne lækket. Fortsat nedbrud i 2026 — 2 nedbrud på 3 uger i marts 2026, apoteker lammet." },
         { project: "Aula", issue: "Pris 'løber løbsk'. Børns data eksponeret. KOMBIT overvejer leverandørskift men er låst." },
         { project: "PSRM (gældsinddrivelse)", issue: "Teknologien allerede forældet. Leverandøren stoppet sikkerhedsopdateringer." },
         { project: "Smittestop-appen", issue: "35+ mio. kr. for app der ikke virkede. Lukket kildekode." },
         { project: "Våbenregistret (PAC)", issue: "System 'praktisk talt kollapset'. 17.000+ jægere uden våbentilladelser." },
         { project: "Rejsekort-app", issue: "Pauset pga. fejl. Anonymiserede ikke lokationsdata. Kontrakt annulleret af Klagenævnet." },
+        { project: "Pol-Disp (politi-dispatchsystem)", issue: "Budget: 200 mio. → 388 mio. kr. (+94%). 3+ år forsinket. Rigspolitiet peger på Netcompany. København først klar 2027." },
+        { project: "ESAS (studieadministration)", issue: "Budget: 171 mio. → 292 mio. kr. (+65%). 3 år forsinket. 21 uddannelsesinstitutioner ramt. 80 mio. kr. i tabte effektiviseringsgevinster." },
+        { project: "Digital Post migration (2022-2025)", issue: "Datatilsynet: 'alvorlig kritik' juli 2025. Borgere kunne tilgå andres postkasser. 160 TB data, 1,4 mia. dokumenter migreret med utilstrækkelig test." },
     ],
 
     securityIncidents: {
@@ -1693,11 +1712,103 @@ const NETCOMPANY_DEEP_DIVE = {
         idaSager: "IDA (Ingeniørforeningen) har behandlet over 100 opsigelsessager fra Netcompany de seneste år.",
         prosaWarning: "PROSAs næstformand Curt Kjærsgaard Raavig: 'Tænk dig om før du takker ja til job i Netcompany. For mange bliver slidt op. I 20erne!'",
         netcompanyResponse: "André Rogaczewski: 16-20% medarbejderomsætning er 'meget normalt'. Netcompany afviser at stille op til interview om undersøgelsen.",
+        sdcOverenskomst: "SDC-opkøbet (2025): Opsagde overenskomst dag 1. 630 medarbejdere miste rettigheder. 100+ 'hush money'-fratrædelser siden 2023. Finansforbundet: 'Dybt problematisk.'",
     },
 
     systemicRisk: "Netcompany kontrollerer MitID, Digital Post, borger.dk, NemLog-in, NemKonto, Aula og ~33% af statens IT-projekter. Hvis Netcompany fejler, fejler Danmarks digitale infrastruktur. Professor Jan Pries Heje: 'Et nyt monopol.' Præcis det der skete med KMD.",
 
     dsbComparison: {
         analogy: "Netcompany er IT-verdenens DSB: statsligt monopol, ingen reel konkurrence, kontrakterne brydes uden konsekvenser, og alternativerne er systematisk udelukket.",
+    },
+};
+
+/**
+ * ORBIX CORE — How AI-first development solves the problems exposed above
+ * Sources: orbixcore.ai, research analysis of Danish public IT failure patterns
+ */
+const ORBIX_CORE_DATA = {
+    tagline: "Software bygget med AI i kernen — ikke som eftertanke",
+    intro: "Hver eneste skandale på denne side har de samme fejl: ugennemsigtige processer, manglende kvalitetskontrol, leverandør-afhængighed og budgetter der eksploderer. Orbix Core er bygget til at eliminere dem alle.",
+
+    problemSolutionMap: [
+        {
+            problem: "Budget-eksplosioner (gennemsnit +108% i DK)",
+            howItHappens: "Konsulenter underbyder for at vinde, så tillægger ændringsordrer. Ingen realtids-overvågning af forbrug vs. levering.",
+            orbixSolution: "AI-agenter overvåger forbrug, velocity og scope i realtid. Afvigelser opdages i timer, ikke år. Fuld gennemsigtighed fra dag 1.",
+            exampleCase: "EFI: 500 mio. → 1+ mia. kr. over 10 år. Ingen opdagede det før Rigsrevisionen kiggede.",
+        },
+        {
+            problem: "Leverandør-monopol og vendor lock-in",
+            howItHappens: "Store firmaer skriver kode kun de forstår. Proprietære systemer gør skift umuligt. 33% af statens IT er hos ét firma.",
+            orbixSolution: "Alt bygges med åben arkitektur, dokumenteret af AI. Kodebasen er forståelig og overdragelig. Ingen black boxes.",
+            exampleCase: "Netcompany kontrollerer MitID, Digital Post, NemKonto, borger.dk — skift er praktisk umuligt.",
+        },
+        {
+            problem: "Kvalitetsfejl der rammer borgere",
+            howItHappens: "Utilstrækkelig test, rushed deadlines, ingen automatiseret kvalitetskontrol. Fejl opdages efter go-live.",
+            orbixSolution: "AI-drevet test fra første linje kode. Automatisk sikkerhedsscanning, GDPR-compliance-check og performance-test i hver iteration.",
+            exampleCase: "Digital Post: Borgere kunne læse andres post på dag 1. GDPR-bøde: 15 mio. kr.",
+        },
+        {
+            problem: "Forsinkelser (gennemsnit 4,9 år i stedet for 4)",
+            howItHappens: "Vandfaldsmodel, uklare krav, manglende teknisk ledelse. Problemer eskalerer først når det er for sent.",
+            orbixSolution: "AI accelererer kravanalyse, arkitektur-design og kodegenerering. Iterativ levering med synlige fremskridt hver uge.",
+            exampleCase: "Pol-Disp: Planlagt 2023, nu 2027 for København. 4 år forsinket.",
+        },
+        {
+            problem: "Konsulent-afhængighed (4+ mia. kr./år)",
+            howItHappens: "Organisationer har ikke intern kapacitet. Konsulenter til 15.000 kr./timen bygger viden der forsvinder når kontrakten slutter.",
+            orbixSolution: "AI-agenter erstatter rutinemæssigt konsulentarbejde. Viden dokumenteres automatisk og forbliver i organisationen.",
+            exampleCase: "Staten bruger 4+ mia. kr./år på IT-konsulenter. Netcompany alene: 734 mio. kr./år.",
+        },
+        {
+            problem: "Sikkerhedshuller i kritisk infrastruktur",
+            howItHappens: "537 servere kan ikke opdateres. 28% af systemer i dårlig stand. Passwords lækket fra produktionsservere.",
+            orbixSolution: "Sikkerhed er indbygget fra start — ikke tilføjet bagefter. AI scanner kontinuerligt for sårbarheder, forældede afhængigheder og compliance-brud.",
+            exampleCase: "Zyndicate-sagen: Password fra Netcompany fundet på statsserver → adgang til 20 produktionssystemer.",
+        },
+    ],
+
+    keyDifferentiators: [
+        {
+            title: "AI-agenter i hvert trin",
+            desc: "Fra kravanalyse og arkitektur til test, deployment og overvågning. Ikke AI som marketing — AI som fundamental arbejdsmetode.",
+        },
+        {
+            title: "Fuld gennemsigtighed",
+            desc: "Kunden ser alt: kode, beslutninger, testresultater, forbrug. Ingen sorte bokse, ingen overraskelser ved næste faktura.",
+        },
+        {
+            title: "Ekspertisen forbliver intern",
+            desc: "Orbix Core træner kundens team i AI-drevet udvikling. Målet er at gøre kunden selvkørende — ikke afhængig.",
+        },
+        {
+            title: "Åben arkitektur, ingen lock-in",
+            desc: "Alt bygges med åbne standarder og overdragelig kode. Kunden ejer alt og kan skifte leverandør når som helst.",
+        },
+        {
+            title: "Hurtigere, billigere, bedre",
+            desc: "AI reducerer leveringstiden med 30-60%, fanger fejl før de når produktion, og sænker omkostningerne til en brøkdel af traditionel konsulentudvikling.",
+        },
+    ],
+
+    comparisonTable: {
+        headers: ["", "Traditionel konsulentmodel", "Orbix Core AI-model"],
+        rows: [
+            ["Gennemsigtighed", "Kunden ser resultatet, ikke processen", "Alt er synligt i realtid"],
+            ["Budgetkontrol", "Ændringsordrer og tillæg", "AI overvåger forbrug vs. levering"],
+            ["Kvalitetssikring", "Manuel test, ofte efter go-live", "Automatisk AI-test i hvert trin"],
+            ["Leverandørskift", "Praktisk umuligt (vendor lock-in)", "Åben kode, overdragelig fra dag 1"],
+            ["Videnoverførsel", "Forsvinder med konsulenten", "Dokumenteres automatisk, forbliver internt"],
+            ["Sikkerhed", "Tilføjes som eftertanke", "Indbygget fra første linje kode"],
+            ["Pris pr. funktionspunkt", "15.000 kr./time konsulenttakst", "Brøkdel — AI gør det tunge løft"],
+        ],
+    },
+
+    callToAction: {
+        headline: "Danmark har brændt 120+ milliarder på den gamle model. Det er tid til en ny.",
+        body: "Orbix Core beviser at software kan bygges hurtigere, billigere og med fuld gennemsigtighed — uden at ofre kvalitet eller sikkerhed. Det eneste det kræver er viljen til at gøre det anderledes.",
+        linkText: "Udforsk Orbix Core",
+        linkUrl: "https://orbixcore.ai",
     },
 };
