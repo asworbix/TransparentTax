@@ -846,7 +846,7 @@ function renderOrbixCore() {
             `).join('')}
         </div>
 
-        <h3 class="kh-sub-heading">6 garantier , dit fulde ejerskab</h3>
+        <h3 class="kh-sub-heading">6 garantier for dit fulde ejerskab</h3>
         <div class="orbix-pillars">
             ${o.ownershipPillars.map(p => `
                 <div class="orbix-pillar-card">

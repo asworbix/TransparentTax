@@ -98,7 +98,7 @@ function initScrollProgress() {
 }
 
 /**
- * Reading timeline , clickable steps that switch tabs + track progress
+ * Reading timeline: clickable steps that switch tabs + track progress
  */
 function initReadingTimeline() {
     var steps = document.querySelectorAll('.rt-step');

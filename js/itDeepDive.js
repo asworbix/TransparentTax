@@ -1646,7 +1646,7 @@ const NETCOMPANY_DEEP_DIVE = {
 
     timeline2025_2026: [
         { date: "Feb 2025", event: "Netcompany annoncerer opkøb af SDC (bankernes IT-leverandør) for 1 mia. kr." },
-        { date: "Jan 2025", event: "35-årig dømt for datatyveri , brugte Netcompany-password fundet på statslig server til at tilgå 20 produktionssystemer." },
+        { date: "Jan 2025", event: "35-årig dømt for datatyveri. Brugte Netcompany-password fundet på statslig server til at tilgå 20 produktionssystemer." },
         { date: "Jul 2025", event: "SDC-opkøb lukkes. Overenskomst opsagt dag 1. 630 medarbejdere ramt." },
         { date: "Jul 2025", event: "Datatilsynet: 'alvorlig kritik' af Digital Post-migrationen. Borgere kunne læse andres post." },
         { date: "Okt 2025", event: "Pol-Disp forsinket igen. Pris steget fra 200 til 388 mio. kr. København først 2027." },
@@ -1654,7 +1654,7 @@ const NETCOMPANY_DEEP_DIVE = {
         { date: "Jan 2026", event: "Ny overenskomst med Finansforbundet efter 5 måneders forhandling. Strejke afværget." },
         { date: "Feb 2026", event: "Aktietilbagekøbsprogram op til 750 mio. kr. lanceret." },
         { date: "Mar 2026", event: "To MitID-nedbrud på 3 uger. Apoteker lammet i 4,5 timer. 'Intern systemfejl.'" },
-        { date: "Mar 2026", event: "Netcompany hæver marginforventninger for 2026 , mens nedbrud fortsætter." },
+        { date: "Mar 2026", event: "Netcompany hæver marginforventninger for 2026, mens nedbrud fortsætter." },
     ],
 
     whyTheyKeepWinning: [
@@ -1677,7 +1677,7 @@ const NETCOMPANY_DEEP_DIVE = {
     ],
 
     documentedFailures: [
-        { project: "MitID/mit.dk", issue: "GDPR-bot 15 mio. kr. Borgere kunne logge ind på andres konti. 18.000 brugernavne lækket. Fortsat nedbrud i 2026 , 2 nedbrud på 3 uger i marts 2026, apoteker lammet." },
+        { project: "MitID/mit.dk", issue: "GDPR-bot 15 mio. kr. Borgere kunne logge ind på andres konti. 18.000 brugernavne lækket. Fortsat nedbrud i 2026. 2 nedbrud på 3 uger i marts 2026, apoteker lammet." },
         { project: "Aula", issue: "Pris 'løber løbsk'. Børns data eksponeret. KOMBIT overvejer leverandørskift men er låst." },
         { project: "PSRM (gældsinddrivelse)", issue: "Teknologien allerede forældet. Leverandøren stoppet sikkerhedsopdateringer." },
         { project: "Smittestop-appen", issue: "35+ mio. kr. for app der ikke virkede. Lukket kildekode." },
@@ -1723,18 +1723,18 @@ const NETCOMPANY_DEEP_DIVE = {
 };
 
 /**
- * ORBIX CORE , 100% Ownership. Zero Vendor Lock-in.
+ * ORBIX CORE: 100% Ownership. Zero Vendor Lock-in.
  * Sources: orbixcore.ai, research analysis of Danish public IT failure patterns
  */
 const ORBIX_CORE_DATA = {
     tagline: "100% ejerskab. Nul vendor lock-in. Hver eneste proces. Hvert eneste bit data. Dit.",
-    intro: "Den danske stat har tabt over 120 milliarder kroner fordi leverandører ejer koden, processerne og dataen , ikke skatteyderne. Orbix Core vender modellen på hovedet: alt hvad vi bygger, ejer du. Fuldt. Permanent. Uden undtagelser.",
+    intro: "Den danske stat har tabt over 120 milliarder kroner fordi leverandører ejer koden, processerne og dataen, ikke skatteyderne. Orbix Core vender modellen på hovedet: alt hvad vi bygger, ejer du. Fuldt. Permanent. Uden undtagelser.",
 
     ownershipPillars: [
         {
             icon: "01",
             title: "100% kode-ejerskab",
-            desc: "Hver linje kode vi skriver, ejer du fra dag 1. Ingen proprietære frameworks, ingen licensnøgler, ingen afhængigheder af os. Du kan tage koden og gå , når som helst, uden spørgsmål.",
+            desc: "Hver linje kode vi skriver, ejer du fra dag 1. Ingen proprietære frameworks, ingen licensnøgler, ingen afhængigheder af os. Du kan tage koden og gå. Når som helst, uden spørgsmål.",
             contrast: "I dag: Netcompany kontrollerer kildekoden til MitID, Digital Post, borger.dk og NemKonto. Staten kan ikke skifte leverandør uden at starte forfra. Det koster milliarder.",
         },
         {
@@ -1758,19 +1758,19 @@ const ORBIX_CORE_DATA = {
         {
             icon: "05",
             title: "100% frihed til at skifte",
-            desc: "Alt bygges med åbne standarder og fuld dokumentation. Du kan skifte leverandør, insource, eller videreudvikle selv , uden tab af funktionalitet eller viden.",
+            desc: "Alt bygges med åbne standarder og fuld dokumentation. Du kan skifte leverandør, insource eller videreudvikle selv, uden tab af funktionalitet eller viden.",
             contrast: "I dag: 289 af statens 723 IT-systemer kan IKKE sendes i udbud pga. vendor lock-in. Leverandøren har magten, ikke kunden.",
         },
         {
             icon: "06",
             title: "100% gennemsigtighed",
-            desc: "Intet skjult. Ingen ændringsordrer. Ingen overraskelser. Du ser realtidsstatus på forbrug, fremdrift, kvalitet og sikkerhed , som et live dashboard, ikke en kvartalsrapport.",
+            desc: "Intet skjult. Ingen ændringsordrer. Ingen overraskelser. Du ser realtidsstatus på forbrug, fremdrift, kvalitet og sikkerhed. Som et live dashboard, ikke en kvartalsrapport.",
             contrast: "I dag: Pol-Disp (politiets system) gik fra 200 mio. til 388 mio. kr. Forsinkelser og ekstraregninger blev først synlige efter årevis.",
         },
     ],
 
     vendorLockInStats: {
-        title: "Vendor lock-in i tal , det problem Orbix Core løser",
+        title: "Vendor lock-in i tal: det problem Orbix Core løser",
         stats: [
             { value: "289", label: "statslige IT-systemer der IKKE kan sendes i udbud", note: "Total vendor lock-in" },
             { value: "33%", label: "af statens IT-projekter kontrolleret af ét firma", note: "Netcompany (34 af 104)" },
@@ -1782,17 +1782,17 @@ const ORBIX_CORE_DATA = {
     howItWorks: [
         {
             step: "1",
-            title: "Vi bygger , du ejer",
+            title: "Vi bygger. Du ejer.",
             desc: "Orbix Core udvikler med AI-agenter i kernen. Hurtigere, billigere, med færre fejl. Men forskellen er: alt vi bygger, overdrages til dig med fuld dokumentation og åben kildekode.",
         },
         {
             step: "2",
-            title: "Vi træner , du mestrer",
-            desc: "Vi gør ikke din organisation afhængig. Vi træner dit team i AI-drevet udvikling, så I selv kan vedligeholde, videreudvikle og skalere , uden os.",
+            title: "Vi træner. Du mestrer.",
+            desc: "Vi gør ikke din organisation afhængig. Vi træner dit team i AI-drevet udvikling, så I selv kan vedligeholde, videreudvikle og skalere, uden os.",
         },
         {
             step: "3",
-            title: "Vi går , du beholder alt",
+            title: "Vi går. Du beholder alt.",
             desc: "Når projektet er færdigt, har du koden, dataen, processerne, AI-agenterne og kompetencen. Internt. Permanent. Ingen løbende licensbetalinger, ingen opsigelsesklausuler.",
         },
     ],
@@ -1813,7 +1813,7 @@ const ORBIX_CORE_DATA = {
 
     callToAction: {
         headline: "Stop med at leje din egen infrastruktur. Ej den.",
-        body: "120+ milliarder kroner er spildt fordi den offentlige sektor lejer systemer de burde eje. Orbix Core bygger software med AI , hurtigere, billigere, gennemsigtigt , og du ejer hver eneste del. Kode. Data. Processer. AI-agenter. Alt.",
+        body: "120+ milliarder kroner er spildt fordi den offentlige sektor lejer systemer de burde eje. Orbix Core bygger software med AI, hurtigere, billigere, gennemsigtigt, og du ejer hver eneste del. Kode. Data. Processer. AI-agenter. Alt.",
         linkText: "Se hvordan på orbixcore.ai",
         linkUrl: "https://orbixcore.ai",
     },
