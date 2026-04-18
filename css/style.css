@@ -1235,6 +1235,7 @@ a.powered-credit:hover {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    counter-reset: case-counter;
 }
 
 .case-card {
@@ -1243,6 +1244,23 @@ a.powered-credit:hover {
     border-radius: 10px;
     overflow: hidden;
     border-left: 4px solid;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s, box-shadow 0.3s;
+    counter-increment: case-counter;
+}
+
+.case-card.case-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.case-card:nth-child(even) {
+    transition-delay: 0.05s;
+}
+
+.case-card:nth-child(3n) {
+    transition-delay: 0.1s;
 }
 
 .case-catastrophic { border-left-color: var(--accent); }
@@ -1256,11 +1274,12 @@ a.powered-credit:hover {
     justify-content: space-between;
     gap: 1rem;
     flex-wrap: wrap;
-    transition: background 0.15s;
+    transition: background 0.3s, padding-left 0.3s;
 }
 
 .case-header:hover {
-    background: rgba(255, 255, 255, 0.02);
+    background: rgba(255, 255, 255, 0.03);
+    padding-left: 1.5rem;
 }
 
 .case-title-row {
@@ -1316,21 +1335,30 @@ a.powered-credit:hover {
     font-size: 1.4rem;
     font-weight: 300;
     color: var(--text-muted);
-    transition: transform 0.2s;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     flex-shrink: 0;
 }
 
 .case-open .case-expand-icon {
     transform: rotate(45deg);
+    color: var(--accent-light);
 }
 
 .case-body {
-    display: none;
-    padding: 0 1.25rem 1.25rem;
+    max-height: 0;
+    overflow: hidden;
+    padding: 0 1.25rem;
+    transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
 }
 
 .case-open .case-body {
-    display: block;
+    max-height: 3000px;
+    padding: 0 1.25rem 1.25rem;
+}
+
+.case-open {
+    border-color: rgba(200, 16, 46, 0.4);
+    box-shadow: 0 4px 30px rgba(200, 16, 46, 0.08), 0 0 0 1px rgba(200, 16, 46, 0.1);
 }
 
 .case-lost {
@@ -1409,40 +1437,82 @@ a.powered-credit:hover {
     flex-direction: column;
     gap: 0;
     position: relative;
-    padding-left: 1rem;
-    border-left: 2px solid var(--border);
+    padding-left: 1.25rem;
+    border-left: 2px solid rgba(200, 16, 46, 0.15);
 }
 
 .tl-item {
     display: flex;
     gap: 0.75rem;
-    padding: 0.5rem 0;
+    padding: 0.6rem 0;
     font-size: 0.85rem;
     position: relative;
+    opacity: 0;
+    transform: translateX(-8px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
+
+.case-open .tl-item {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.case-open .tl-item:nth-child(1) { transition-delay: 0.05s; }
+.case-open .tl-item:nth-child(2) { transition-delay: 0.1s; }
+.case-open .tl-item:nth-child(3) { transition-delay: 0.15s; }
+.case-open .tl-item:nth-child(4) { transition-delay: 0.2s; }
+.case-open .tl-item:nth-child(5) { transition-delay: 0.25s; }
+.case-open .tl-item:nth-child(6) { transition-delay: 0.3s; }
+.case-open .tl-item:nth-child(7) { transition-delay: 0.35s; }
+.case-open .tl-item:nth-child(8) { transition-delay: 0.4s; }
+.case-open .tl-item:nth-child(9) { transition-delay: 0.45s; }
+.case-open .tl-item:nth-child(n+10) { transition-delay: 0.5s; }
 
 .tl-item::before {
     content: '';
     position: absolute;
-    left: -1.35rem;
-    top: 0.75rem;
+    left: -1.6rem;
+    top: 0.85rem;
     width: 10px;
     height: 10px;
     border-radius: 50%;
-    background: var(--border);
-    border: 2px solid var(--bg-card);
+    background: var(--accent);
+    border: 2px solid var(--bg);
+    box-shadow: 0 0 6px rgba(200, 16, 46, 0.3);
+    transition: box-shadow 0.3s;
+}
+
+.tl-item:hover::before {
+    box-shadow: 0 0 12px rgba(200, 16, 46, 0.6);
+}
+
+.tl-item:hover {
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 6px;
 }
 
 .tl-year {
     font-weight: 700;
-    color: var(--text-muted);
-    min-width: 70px;
+    color: var(--accent-light);
+    min-width: 75px;
     flex-shrink: 0;
+    font-size: 0.82rem;
+    font-variant-numeric: tabular-nums;
 }
 
 .tl-event {
     color: var(--text-muted);
     line-height: 1.5;
+}
+
+.tl-item:last-child::after {
+    content: '';
+    position: absolute;
+    left: -1.42rem;
+    top: calc(0.85rem + 12px);
+    bottom: 0;
+    width: 4px;
+    background: var(--bg);
 }
 
 /* Root causes in case body */
@@ -3593,8 +3663,20 @@ footer a:hover {
     background-size: 200% 100%;
     animation: shimmer 3s linear infinite;
     z-index: 10000;
-    transition: width 0.1s linear;
-    box-shadow: 0 0 10px rgba(200, 16, 46, 0.5), 0 0 30px rgba(200, 16, 46, 0.2);
+    transition: width 0.15s linear;
+    box-shadow: 0 0 12px rgba(200, 16, 46, 0.6), 0 0 40px rgba(200, 16, 46, 0.2);
+}
+
+.scroll-progress::after {
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -2px;
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--accent-light);
+    box-shadow: 0 0 10px var(--accent), 0 0 20px var(--accent);
 }
 
 @keyframes shimmer {
@@ -3791,6 +3873,192 @@ header::before {
 .case-card:hover {
     border-color: rgba(200, 16, 46, 0.3);
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.3), 0 0 30px rgba(200, 16, 46, 0.06);
+}
+
+/* --- Scroll-triggered animations for content sections --- */
+.kh-stat-card {
+    opacity: 0;
+    transform: scale(0.95) translateY(10px);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.kh-stat-card.stat-visible {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+}
+
+.kh-stats-grid .kh-stat-card:nth-child(1) { transition-delay: 0s; }
+.kh-stats-grid .kh-stat-card:nth-child(2) { transition-delay: 0.08s; }
+.kh-stats-grid .kh-stat-card:nth-child(3) { transition-delay: 0.16s; }
+.kh-stats-grid .kh-stat-card:nth-child(4) { transition-delay: 0.24s; }
+
+.kh-stat-value {
+    transition: color 0.3s;
+}
+
+.kh-stat-card:hover .kh-stat-value {
+    color: var(--accent-light);
+}
+
+.kh-stat-card:hover {
+    border-color: rgba(200, 16, 46, 0.25);
+    transform: translateY(-3px);
+}
+
+/* Animated info boxes */
+.spending-insight-box {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.spending-insight-box:hover {
+    transform: translateX(4px);
+    box-shadow: -4px 0 20px rgba(200, 16, 46, 0.08);
+}
+
+/* Animated consultant/scandal cards */
+.scandal-consultant-card,
+.consultant-card,
+.solution-card,
+.rc-card,
+.norway-diff-card,
+.norway-success-card {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s, box-shadow 0.3s;
+}
+
+.scandal-consultant-card.el-visible,
+.consultant-card.el-visible,
+.solution-card.el-visible,
+.rc-card.el-visible,
+.norway-diff-card.el-visible,
+.norway-success-card.el-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Interactive hover states for content cards */
+.scandal-consultant-card:hover,
+.consultant-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+}
+
+.solution-card:hover {
+    border-color: rgba(34, 197, 94, 0.25);
+    transform: translateY(-2px);
+}
+
+.rc-card:hover {
+    transform: translateY(-3px) scale(1.01);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Savings cards animation */
+.savings-card {
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.savings-card.el-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.sb-row {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.sb-row.el-visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Animated number counter effect for stat values */
+@keyframes countUp {
+    from { opacity: 0; transform: translateY(8px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.kh-stat-card.stat-visible .kh-stat-value {
+    animation: countUp 0.4s ease-out;
+}
+
+/* Smooth tab content transitions */
+.spending-tab-content {
+    animation: none;
+}
+
+.spending-tab-content.active {
+    animation: fadeSlideIn 0.35s ease-out;
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(12px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Norway comparison hero animation */
+.norway-hero {
+    opacity: 0;
+    transform: scale(0.97);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.norway-hero.el-visible {
+    opacity: 1;
+    transform: scale(1);
+}
+
+.norway-pct {
+    transition: transform 0.3s;
+}
+
+.norway-hero-stat:hover .norway-pct {
+    transform: scale(1.08);
+}
+
+/* Interactive progress indicator on case cards */
+.case-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent), var(--accent-light));
+    transition: width 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.case-card:hover::after,
+.case-open::after {
+    width: 100%;
+}
+
+/* Subtle scan line effect on the whole page */
+@keyframes scanLine {
+    0% { transform: translateY(-100vh); }
+    100% { transform: translateY(100vh); }
+}
+
+.card::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background: linear-gradient(180deg, transparent, rgba(200, 16, 46, 0.02), transparent);
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.5s;
+}
+
+.card:hover::after {
+    opacity: 1;
+    animation: scanLine 3s linear infinite;
 }
 
 /* --- CTA Section Enhancement --- */
@@ -4070,12 +4338,20 @@ footer::before {
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 12px;
     padding: 1.5rem;
-    transition: border-color 0.3s, transform 0.2s;
+    opacity: 0;
+    transform: translateX(-15px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s, box-shadow 0.3s;
+}
+
+.orbix-pillar-card.el-visible {
+    opacity: 1;
+    transform: translateX(0);
 }
 
 .orbix-pillar-card:hover {
     border-color: rgba(34, 197, 94, 0.3);
     transform: translateX(4px);
+    box-shadow: 0 4px 20px rgba(34, 197, 94, 0.06);
 }
 
 .orbix-pillar-number {
@@ -4131,11 +4407,20 @@ footer::before {
     padding: 1.5rem;
     text-align: center;
     position: relative;
-    transition: border-color 0.3s;
+    opacity: 0;
+    transform: translateY(15px);
+    transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.3s, box-shadow 0.3s;
+}
+
+.orbix-step.el-visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .orbix-step:hover {
     border-color: rgba(34, 197, 94, 0.25);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(34, 197, 94, 0.06);
 }
 
 .orbix-step-num {

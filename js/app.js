@@ -177,17 +177,87 @@ function updateTimelineState(steps, activeTab, visited) {
 }
 
 /**
- * Animate sections as they scroll into view
+ * Animate sections and elements as they scroll into view
  */
 function initSectionAnimations() {
+    // Animate main cards
     var cards = document.querySelectorAll('.card');
-    var observer = new IntersectionObserver(function (entries) {
+    var cardObserver = new IntersectionObserver(function (entries) {
         entries.forEach(function (entry) {
             if (entry.isIntersecting) {
                 entry.target.classList.add('card-visible');
-                observer.unobserve(entry.target);
+                cardObserver.unobserve(entry.target);
             }
         });
     }, { threshold: 0.05 });
-    cards.forEach(function (card) { observer.observe(card); });
+    cards.forEach(function (card) { cardObserver.observe(card); });
+
+    // Animate case cards on scroll
+    initCaseCardAnimations();
+
+    // Observe tab switches to trigger inner animations
+    var tabObserver = new MutationObserver(function () {
+        animateVisibleElements();
+    });
+
+    var tabContents = document.querySelectorAll('.spending-tab-content');
+    tabContents.forEach(function (tc) {
+        tabObserver.observe(tc, { attributes: true, attributeFilter: ['class'] });
+    });
+
+    // Initial trigger
+    setTimeout(animateVisibleElements, 300);
+}
+
+function initCaseCardAnimations() {
+    var caseCards = document.querySelectorAll('.case-card');
+    var caseObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('case-visible');
+                caseObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -30px 0px' });
+    caseCards.forEach(function (card) { caseObserver.observe(card); });
+}
+
+function animateVisibleElements() {
+    var activeTab = document.querySelector('.spending-tab-content.active');
+    if (!activeTab) return;
+
+    // Stat cards
+    var statCards = activeTab.querySelectorAll('.kh-stat-card');
+    var statObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('stat-visible');
+                statObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.2 });
+    statCards.forEach(function (s) { statObserver.observe(s); });
+
+    // Content cards (scandal, consultant, solution, rc, norway, savings)
+    var els = activeTab.querySelectorAll(
+        '.scandal-consultant-card, .consultant-card, .solution-card, .rc-card, ' +
+        '.norway-diff-card, .norway-success-card, .savings-card, .sb-row, .norway-hero, ' +
+        '.orbix-pillar-card, .orbix-step, .case-card'
+    );
+    var elObserver = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('el-visible');
+                if (entry.target.classList.contains('case-card')) {
+                    entry.target.classList.add('case-visible');
+                }
+                elObserver.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1, rootMargin: '0px 0px -20px 0px' });
+
+    els.forEach(function (el, i) {
+        el.style.transitionDelay = Math.min(i * 0.04, 0.4) + 's';
+        elObserver.observe(el);
+    });
 }
